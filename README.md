@@ -7,7 +7,7 @@ Główna idea aplikacji mobilnej “CountYourWater” to zachęcenie ludzi do pi
 Skład grupy:
 Monika Tańska,
 Weronika Witasik,
-Александра Граудул
+Александра Граудул,
 Karina Verkholomova
 #
 Wyznaczone role
