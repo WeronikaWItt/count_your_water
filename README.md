@@ -12,3 +12,6 @@ Monika Tańska - Designer, frontend developer
 Weronika Witasik - Programista
 Александра Граудул - Tester
 Karina Verkholomova - Programista
+#
+Wymagania funkcjonalne
+1. Użytkownik będzie otrzymywał przypomnienia o piciu wody.
