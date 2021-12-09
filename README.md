@@ -17,4 +17,4 @@ Wymagania funkcjonalne
 1. Użytkownik będzie otrzymywał przypomnienia o piciu wody.
 2. Użytkownik może zanotować, ile wody wypił na raz.
 3. Użytkownik będzie mógł obliczyć, ile wody potrzebuje dziennie w zależności od swojej płci i wagi.
-4. Użytkonik będzie mógł wylosować motywacyjny cytat dnia.
+4. Użytkownik będzie mógł wylosować motywacyjny cytat dnia.
