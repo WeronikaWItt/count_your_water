@@ -4,14 +4,16 @@ Główna idea aplikacji mobilnej “CountYourWater” to zachęcenie ludzi do pi
 Skład grupy:
 Monika Tańska,
 Weronika Witasik,
-Александра Граудул,
+Oleksandra Hraudul,
 Karina Verkholomova
 #
 Wyznaczone role
 Monika Tańska - Designer, frontend developer
 Weronika Witasik - Programista
-Александра Граудул - Tester
+Oleksandra Hraudul - Tester
 Karina Verkholomova - Programista
 #
 Wymagania funkcjonalne
 1. Użytkownik będzie otrzymywał przypomnienia o piciu wody.
+2. Użytkownik może zanotować, ile wody wypił na raz.
+3. Użytkownik będzie mógł obliczyć, ile wody potrzebuje dziennie w zależności od swojej płci i wagi.
