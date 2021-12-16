@@ -18,3 +18,7 @@ Wymagania funkcjonalne
 2. Użytkownik może zanotować, ile wody wypił na raz.
 3. Użytkownik będzie mógł obliczyć, ile wody potrzebuje dziennie w zależności od swojej płci i wagi.
 4. Użytkownik będzie mógł wylosować motywacyjny cytat dnia.
+#
+Wymagania niefunkcjonalne
+1. Aplikacja będzie dostępna dla użytkownika 24/7.
+2. Aplikacja będzie spełniać wymagania kontrastowe.
