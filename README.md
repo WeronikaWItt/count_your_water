@@ -22,3 +22,4 @@ Wymagania funkcjonalne
 Wymagania niefunkcjonalne
 1. Aplikacja będzie dostępna dla użytkownika 24/7.
 2. Aplikacja będzie spełniać wymagania kontrastowe.
+3. Dodanie ilości wypijanej jednorazowo wody do całkowitej dziennej dawki wypijanej wody powinno nastąpić w ciągu 1-2 sekund
