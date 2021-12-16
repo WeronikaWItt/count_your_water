@@ -24,3 +24,4 @@ Wymagania niefunkcjonalne
 2. Aplikacja będzie spełniać wymagania kontrastowe.
 3. Dodanie ilości wypijanej jednorazowo wody do całkowitej dziennej dawki wypijanej wody powinno nastąpić w ciągu 1-2 sekund.
 4. Aplikacja powinna się załadować w mniej niż 2 sekundy.
+5. Aplikacja powinna wylosować cytat dnia w mniej niż 2 sekundy.
