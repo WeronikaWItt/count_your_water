@@ -1,11 +1,11 @@
-| No  | Kamienie milowe | Zaplanowany termin | Dostosowany termin | Rzeczywisty termin |
-| ------------- | ------------- | ------------- | ------------- | ------------- | 
-| 1 | Content Cell  | 02.12.2021 | date | date |
-| 2 | Content Cell  | 16.12.2021 | date | date |
-| 3 | Zatwierdzenie designu | 23.12.2021 | date | date |
-| 4 | Rozwój aplikacji alfa (zakodowanie statycznej wersji bez funkcjonalności) | 30.12.2021 | date | date |
-| 5 | Rozwój aplikacji beta (dodanie do wersji alfa funkcjonalności aplikacji) | 06.01.2022 | date | date |
-| 6 | Content Cell  | 12.01.2022 | date | date |
-| 7 | Content Cell  | 13.01.2022 | date | date |
-| 8 | Content Cell  | 20.01.2022 | date | date |
-| 9 | Content Cell  | 27.01.2022 | date | date |
+| № |                           Kamienie milowe                                 | Zaplanowany termin | Dostosowany termin | Rzeczywisty termin |
+| ----------------------------------------------------------------------------- | ------------------ | ------------------ | ------------------ | 
+| 1 | Zatwierdzenie idei i tematyki projektu                                    |      02.12.2021    |     02.12.2021     |     02.12.2021     |
+| 2 | Przegląd wymagań                                                          |      16.12.2021    |     16.12.2021     |     16.12.2021     |
+| 3 | Zatwierdzenie designu                                                     |      23.12.2021    | date               | date               |
+| 4 | Rozwój aplikacji alfa (zakodowanie statycznej wersji bez funkcjonalności) |      30.12.2021    | date               | date               |
+| 5 | Rozwój aplikacji beta (dodanie do wersji alfa funkcjonalności aplikacji)  |      06.01.2022    | date               | date               |
+| 6 | Analiza testów i poprawki błędów                                          |      12.01.2022    | date               | date               |
+| 7 | Wstępna prezentacja projektów                                             |      13.01.2022    | date               | date               |
+| 8 | Zatwierdzenie projektu                                                    |      20.01.2022    | date               | date               |
+| 9 | Zatwierdzenie ostatecznej wersji projektu                                 |      27.01.2022    | date               | date               |
