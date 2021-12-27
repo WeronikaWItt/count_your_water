@@ -70,6 +70,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
             const Text('Wiek'),
             const SizedBox(height: 5),
             CustomInput(controller: heightController),
+            const SizedBox(height: 200),
+            MaterialButton(
+              onPressed: () {},
+              padding: const EdgeInsets.all(15),
+              color: Colors.blue,
+              textColor: Colors.white,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
+              child: const Text('Zapisz'),
+            )
           ],
         ),
       ),
