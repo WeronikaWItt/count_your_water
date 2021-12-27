@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class HydrationScreen extends StatefulWidget {
+  const HydrationScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<HydrationScreen> createState() => _HydrationScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HydrationScreenState extends State<HydrationScreen> {
   int _counter = 0;
 
   void _incrementCounter() {

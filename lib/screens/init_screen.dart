@@ -1,4 +1,4 @@
-import 'package:count_your_water/screens/home_screen.dart';
+import 'package:count_your_water/screens/hydration_screen.dart';
 import 'package:count_your_water/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -35,7 +35,7 @@ class InitScreen extends StatelessWidget {
         body: const TabBarView(
           children: [
             HistoryScreen(),
-            HomeScreen(),
+            HydrationScreen(),
             ProfileScreen(),
           ],
         ),
