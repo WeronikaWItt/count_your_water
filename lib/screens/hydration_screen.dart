@@ -11,7 +11,9 @@ class HydrationScreen extends StatefulWidget {
 }
 
 class _HydrationScreenState extends State<HydrationScreen> {
-  int _counter = 0;
+  final int _counter = 0;
+  String result = '0';
+
   double progressValue = 1;
   late Timer _timer;
 
@@ -19,7 +21,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
   void initState() {
     super.initState();
     if (mounted) {
-      _timer = Timer.periodic(const Duration(milliseconds: 20), (Timer _timer) {
+      _timer = Timer.periodic(const Duration(seconds: 5), (Timer _timer) {
         setState(() {
           if (progressValue == 100) {
             progressValue = 0;
@@ -39,14 +41,26 @@ class _HydrationScreenState extends State<HydrationScreen> {
 
   void _incrementCounter() {
     setState(() {
-      _counter++;
+      int sum = _counter + 250;
+      result = sum.toString();
+      //_counter++;
     });
   }
 
   void _decrementCounter() {
     setState(() {
-      _counter--;
+      if (_counter == 0) {
+        result = '0';
+      } else {
+        int sum = _counter - 250;
+        result = sum.toString();
+      }
+      //_counter--;
     });
+  }
+
+  void changeProgress() {
+    setState(() {});
   }
 
   @override
@@ -76,7 +90,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                   sizeUnit: GaugeSizeUnit.factor,
                   cornerStyle: CornerStyle.bothCurve,
                   enableAnimation: true,
-                  animationDuration: 20,
+                  //  animationDuration: 20,
                   animationType: AnimationType.linear,
                 )
               ],
@@ -89,7 +103,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                         'Cel dnia',
                       ),
                       Text(
-                        '$_counter/1800ml',
+                        '$result/1800ml',
                         style: Theme.of(context).textTheme.headline4,
                       ),
                       const SizedBox(height: 20),
