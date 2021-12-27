@@ -1,3 +1,4 @@
+import 'package:count_your_water/widget/custom_input.dart';
 import 'package:flutter/material.dart';
 
 enum Gender {
@@ -64,43 +65,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
             const SizedBox(height: 10),
             const Text('Waga (kg)'),
             const SizedBox(height: 5),
-            TextField(
-              keyboardType: TextInputType.number,
-              controller: weightController,
-              decoration: const InputDecoration(
-                  contentPadding: EdgeInsets.symmetric(horizontal: 20),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blue),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(50),
-                    ),
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(50),
-                    ),
-                  )),
-            ),
+            CustomInput(controller: weightController),
             const SizedBox(height: 10),
             const Text('Wiek'),
             const SizedBox(height: 5),
-            TextField(
-              keyboardType: TextInputType.number,
-              controller: heightController,
-              decoration: const InputDecoration(
-                  contentPadding: EdgeInsets.symmetric(horizontal: 20),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blue),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(50),
-                    ),
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(50),
-                    ),
-                  )),
-            ),
+            CustomInput(controller: heightController),
           ],
         ),
       ),
