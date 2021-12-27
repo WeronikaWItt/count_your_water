@@ -1,6 +1,5 @@
 import 'package:count_your_water/screens/home_screen.dart';
 import 'package:count_your_water/screens/profile_screen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'history_screen.dart';
@@ -20,12 +19,15 @@ class InitScreen extends StatelessWidget {
             tabs: [
               Tab(
                 icon: Icon(Icons.history),
+                text: 'History',
               ),
               Tab(
                 icon: Icon(Icons.water),
+                text: 'Hydration',
               ),
               Tab(
                 icon: Icon(Icons.account_circle_outlined),
+                text: 'Profile',
               ),
             ],
           ),
