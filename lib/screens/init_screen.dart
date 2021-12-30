@@ -1,3 +1,4 @@
+import 'package:count_your_water/constants.dart';
 import 'package:count_your_water/screens/hydration_screen.dart';
 import 'package:count_your_water/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,7 @@ class InitScreen extends StatelessWidget {
       initialIndex: 1,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: kBlue,
           title: const Text('Count Your Water'),
           bottom: const TabBar(
             tabs: [
