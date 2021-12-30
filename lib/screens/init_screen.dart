@@ -16,7 +16,11 @@ class InitScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: kBlue,
-          title: const Text('Count Your Water'),
+          centerTitle: true,
+          title: const Text(
+            'Count Your Water',
+            style: TextStyle(fontFamily: 'Cinzel', fontWeight: FontWeight.bold, fontSize: 25),
+          ),
           bottom: const TabBar(
             tabs: [
               Tab(
