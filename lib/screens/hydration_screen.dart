@@ -14,10 +14,10 @@ class _HydrationScreenState extends State<HydrationScreen> {
   final int _counter = 0;
   String result = '0';
 
-  double progressValue = 1;
-  late Timer _timer;
+  double progressValue = 0;
+  //late Timer _timer;
 
-  @override
+  /*@override
   void initState() {
     super.initState();
     if (mounted) {
@@ -37,12 +37,13 @@ class _HydrationScreenState extends State<HydrationScreen> {
   void dispose() {
     _timer.cancel();
     super.dispose();
-  }
+  }*/
 
   void _incrementCounter() {
     setState(() {
       int sum = _counter + 250;
       result = sum.toString();
+      progressValue+=250;
       //_counter++;
     });
   }
@@ -55,6 +56,11 @@ class _HydrationScreenState extends State<HydrationScreen> {
         int sum = _counter - 250;
         result = sum.toString();
       }
+      if(progressValue==0){
+        progressValue=0;
+      }
+      else{
+      progressValue-=250;}
       //_counter--;
     });
   }
@@ -70,10 +76,14 @@ class _HydrationScreenState extends State<HydrationScreen> {
         SfRadialGauge(
           axes: [
             RadialAxis(
+
               showLabels: false,
+
               showTicks: false,
               minimum: 0,
-              maximum: 100,
+              maximum: 1800,
+              interval: 250,
+
               // startAngle: 180,
               // endAngle: 0,
               radiusFactor: 0.8,
@@ -85,13 +95,16 @@ class _HydrationScreenState extends State<HydrationScreen> {
               ),
               pointers: <GaugePointer>[
                 RangePointer(
+
                   value: progressValue,
                   width: 0.1,
                   sizeUnit: GaugeSizeUnit.factor,
                   cornerStyle: CornerStyle.bothCurve,
                   enableAnimation: true,
-                  //  animationDuration: 20,
                   animationType: AnimationType.linear,
+                  //  animationDuration: 20,
+
+
                 )
               ],
               annotations: [
@@ -112,7 +125,9 @@ class _HydrationScreenState extends State<HydrationScreen> {
                         children: [
                           FloatingActionButton(
                             elevation: 3,
-                            onPressed: _decrementCounter,
+                            onPressed:
+                              _decrementCounter,
+
                             child: const Icon(Icons.minimize_sharp),
                           ),
                           const SizedBox(
@@ -120,7 +135,9 @@ class _HydrationScreenState extends State<HydrationScreen> {
                           ),
                           FloatingActionButton(
                             elevation: 3,
-                            onPressed: _incrementCounter,
+                            onPressed:
+                              _incrementCounter,
+
                             child: const Icon(Icons.add),
                           ),
                         ],
