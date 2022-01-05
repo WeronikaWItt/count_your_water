@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
+
 class HydrationScreen extends StatefulWidget {
   const HydrationScreen({Key? key}) : super(key: key);
 
@@ -10,12 +11,16 @@ class HydrationScreen extends StatefulWidget {
   State<HydrationScreen> createState() => _HydrationScreenState();
 }
 
+class Result extends ChangeNotifier{
+
+}
 
 class _HydrationScreenState extends State<HydrationScreen> {
   final int _counter = 0;
   String result = '0';
 
   double progressValue = 0;
+
   //late Timer _timer;
 
   /*@override
