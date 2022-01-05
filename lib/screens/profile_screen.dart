@@ -18,18 +18,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
   TextEditingController weightController = TextEditingController();
   TextEditingController heightController = TextEditingController();
 
-  String ilosc_wody='0';
-  void count_ilosc_wody(int waga, int godziny) {
+  String waterAmount = '0';
+  void countWaterAmount(int weight, int hours) {
     int res = 0;
-    if(selectedGender==Gender.female) {
-
-      res += ((waga * 0.025) + (godziny * 0.4)) as int;
-
-    } else if(selectedGender==Gender.male){
-      res += ((waga * 0.03) + (godziny * 0.5)) as int;
-
+    if (selectedGender == Gender.female) {
+      res += ((weight * 0.025) + (hours * 0.4)) as int;
+    } else if (selectedGender == Gender.male) {
+      res += ((weight * 0.03) + (hours * 0.5)) as int;
     }
-    ilosc_wody = res.toString();
+    waterAmount = res.toString();
   }
 
   @override
@@ -81,31 +78,35 @@ class _ProfileScreenState extends State<ProfileScreen> {
             const SizedBox(height: 5),
             CustomInput(controller: weightController),
             const SizedBox(height: 10),
-            const Text('Aktywność fizyczna (godziny/deń)'),
+            const Text('Aktywność fizyczna (godziny/dzień)'),
             const SizedBox(height: 5),
             CustomInput(controller: heightController),
             const SizedBox(height: 200),
-
             MaterialButton(
               onPressed: () => showDialog<String>(
-              context: context,
-              builder: (BuildContext context) => AlertDialog(
-                title: const Text('Uwaga'),
-                content: const Text('Czy chcesz pozostawić domyślne spożycie wody (1800 ml) '
-                    'czy chcesz, aby aplikacja obliczała '
-                    'spożycie wody na podstawie twojej wagi i aktywności fizycznej?'),
-                actions: <Widget>[
-                  TextButton(
-                    onPressed: () { Navigator.pop(context, 'Pozostaw jako domyślny'); },
-                    child: const Text('Pozostaw jako domyślny'),
-                  ),
-                  TextButton(
-                    onPressed: () { Navigator.pop(context, 'Oblicz ilość wody'); count_ilosc_wody(55, 2);},
-                    child: const Text('Oblicz ilość wody'),
-                  ),
-                ],
+                context: context,
+                builder: (BuildContext context) => AlertDialog(
+                  title: const Text('Uwaga'),
+                  content: const Text('Czy chcesz pozostawić domyślne spożycie wody (1800 ml) '
+                      'czy chcesz, aby aplikacja obliczała '
+                      'spożycie wody na podstawie twojej wagi i aktywności fizycznej?'),
+                  actions: <Widget>[
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context, 'Pozostaw jako domyślny');
+                      },
+                      child: const Text('Pozostaw jako domyślny'),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context, 'Oblicz ilość wody');
+                        countWaterAmount(55, 2);
+                      },
+                      child: const Text('Oblicz ilość wody'),
+                    ),
+                  ],
+                ),
               ),
-            ),
               padding: const EdgeInsets.all(15),
               color: Colors.blue,
               textColor: Colors.white,
@@ -113,12 +114,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               child: const Text('Zapisz'),
             )
           ],
-
         ),
-
       ),
-
     );
-
   }
 }
