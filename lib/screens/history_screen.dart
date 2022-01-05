@@ -1,8 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+DateTime date = DateTime.now();
+
+String dmy='${date.day}/${date.month}/${date.year}';
 
 class HistoryScreen extends StatelessWidget {
   const HistoryScreen({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +20,8 @@ class HistoryScreen extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text('27.12.2021'),
+                children: <Widget>[
+                  Text('$dmy'),
                   Text('1500/1800 ml'),
                 ],
               ),

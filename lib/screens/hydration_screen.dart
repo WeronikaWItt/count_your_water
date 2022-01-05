@@ -10,6 +10,7 @@ class HydrationScreen extends StatefulWidget {
   State<HydrationScreen> createState() => _HydrationScreenState();
 }
 
+
 class _HydrationScreenState extends State<HydrationScreen> {
   final int _counter = 0;
   String result = '0';
@@ -116,7 +117,8 @@ class _HydrationScreenState extends State<HydrationScreen> {
                         'Cel dnia',
                       ),
                       Text(
-                        '$result/1800ml',
+
+                        '${progressValue.toInt()}/1800ml',
                         style: Theme.of(context).textTheme.headline4,
                       ),
                       const SizedBox(height: 20),
@@ -127,6 +129,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                             elevation: 3,
                             onPressed:
                               _decrementCounter,
+
 
                             child: const Icon(Icons.minimize_sharp),
                           ),
