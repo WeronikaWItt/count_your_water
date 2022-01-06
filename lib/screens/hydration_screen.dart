@@ -4,7 +4,7 @@ import 'package:count_your_water/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
-
+double progressValue = 0;
 class HydrationScreen extends StatefulWidget {
   const HydrationScreen({Key? key}) : super(key: key);
 
@@ -20,7 +20,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
   final int _counter = 0;
   String result = '0';
 
-  double progressValue = 0;
+
 
   //late Timer _timer;
 
@@ -98,7 +98,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
 
               showTicks: false,
               minimum: 0,
-              maximum: 1800,
+              maximum: 3000,
               interval: 250,
 
               // startAngle: 180,

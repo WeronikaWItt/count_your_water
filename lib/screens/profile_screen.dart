@@ -100,6 +100,7 @@
                       TextButton(
                         onPressed: () {
                           Navigator.pop(context, 'Pozostaw jako domyślny');
+                          waterAmount='1800';
                         },
                         child: const Text('Pozostaw jako domyślny'),
                       ),
