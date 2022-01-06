@@ -98,8 +98,9 @@ class _HydrationScreenState extends State<HydrationScreen> {
 
               showTicks: false,
               minimum: 0,
-              maximum: 3000,
+              maximum: 1800,
               interval: 250,
+
 
               // startAngle: 180,
               // endAngle: 0,

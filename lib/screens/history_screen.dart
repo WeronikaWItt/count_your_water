@@ -1,3 +1,4 @@
+
 import 'package:count_your_water/screens/hydration_screen.dart';
 import 'package:count_your_water/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
@@ -36,9 +37,37 @@ class HistoryScreen extends StatelessWidget {
                 ],
               ),
             ),
-          )
+          ),
+          Card(
+            elevation: 2,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text('$dmy'),
+                  Text('$progressValue/${WaterAmount('$waterAmount')}'),
+                ],
+              ),
+            ),
+          ),
+          Card(
+            elevation: 2,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text('$dmy'),
+                  Text('$progressValue/${WaterAmount('$waterAmount')}'),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
   }
 }
+
+
