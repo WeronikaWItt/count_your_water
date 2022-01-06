@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:count_your_water/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
@@ -75,7 +76,16 @@ class _HydrationScreenState extends State<HydrationScreen> {
     setState(() {});
   }
 
-  
+
+
+    String WaterAmount(var water){
+    if(waterAmount=='0'){
+      return '1800ml';
+    }
+    else{return waterAmount.toString()+'ml';}
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -122,9 +132,10 @@ class _HydrationScreenState extends State<HydrationScreen> {
                       const Text(
                         'Cel dnia',
                       ),
+
                       Text(
 
-                        '${progressValue.toInt()}/1800ml',
+                        '${progressValue.toInt()}/${WaterAmount(waterAmount)}',
                         style: Theme.of(context).textTheme.headline4,
                       ),
                       const SizedBox(height: 20),
