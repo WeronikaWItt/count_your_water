@@ -7,7 +7,7 @@ DateTime date = DateTime.now();
 
 String dmy='${date.day}/${date.month}/${date.year}';
 
-String WaterAmount(var water){
+String wateramount(var water){
   if(waterAmount=='0'){
     return '1800ml';
   }
@@ -15,10 +15,25 @@ String WaterAmount(var water){
 
 }
 
+
+
+
+  String saveProgress (String savedDate){
+    String currentDate='6/1/2022';
+    String d='';
+    if(currentDate==savedDate){
+      return currentDate;
+    }
+    else {
+      d=savedDate;
+      return d;
+    }
+  }
+
 class HistoryScreen extends StatelessWidget {
-  const HistoryScreen({Key? key}) : super(key: key);
-
-
+  const HistoryScreen( {Key? key}) : super(key: key);
+  
+  
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -32,8 +47,9 @@ class HistoryScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text('$dmy'),
-                  Text('$progressValue/${WaterAmount('$waterAmount')}'),
+
+                  Text('6/1/2022'),
+                  Text('$progressValue/${wateramount(waterAmount)}'),
                 ],
               ),
             ),
@@ -45,29 +61,20 @@ class HistoryScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text('$dmy'),
-                  Text('$progressValue/${WaterAmount('$waterAmount')}'),
+
+                  Text(saveProgress(dmy)),
+                  //Text('$progressValue/${wateramount(waterAmount)}'),
                 ],
               ),
             ),
           ),
-          Card(
-            elevation: 2,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text('$dmy'),
-                  Text('$progressValue/${WaterAmount('$waterAmount')}'),
-                ],
-              ),
-            ),
-          ),
+
         ],
       ),
     );
   }
+
+
 }
 
 
