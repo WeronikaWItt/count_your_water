@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
@@ -16,30 +18,6 @@ class _HydrationScreenState extends State<HydrationScreen> {
   final int _counter = 0;
   String result = '0';
   String waterAmount = '0';
-
-  //late Timer _timer;
-
-  /*@override
-  void initState() {
-    super.initState();
-    if (mounted) {
-      _timer = Timer.periodic(const Duration(seconds: 5), (Timer _timer) {
-        setState(() {
-          if (progressValue == 100) {
-            progressValue = 0;
-          } else {
-            progressValue++;
-          }
-        });
-      });
-    }
-  }
-
-  @override
-  void dispose() {
-    _timer.cancel();
-    super.dispose();
-  }*/
 
   void _incrementCounter() {
     setState(() {
@@ -71,12 +49,38 @@ class _HydrationScreenState extends State<HydrationScreen> {
     setState(() {});
   }
 
-  String WaterAmount(var water) {
+  String getWaterAmount(var water) {
     if (waterAmount == '0') {
       return '1800ml';
     } else {
       return waterAmount.toString() + 'ml';
     }
+  }
+
+  List<String> quotes = [
+    'Bądź jak woda – przystosowuje się do każdego naczynia, a może zniszczyć skałę.',
+    'Ludzie są jak morze, czasem łagodni i przyjaźni, czasem burzliwi i zdradliwi. Przede wszystkim to jednak tylko woda.',
+    'Żyjemy niczym woda spływająca z góry, podążając mniej więcej w tym samym kierunku, póki jakaś przeszkoda nie zmusi nas do poszukania nowego koryta.',
+    'Bądź niczym bijące źródło, nie zaś jak staw, w którym zawsze stoi ta sama woda.',
+    'Chcesz być zdrowy, młody, nie stroń nigdy od wody.',
+    'Wszystkie istoty ciągną do wody i wokół niej organizują swoje życie. Podobnie ludzkość. Sercem każdej społeczności jest woda: wielka jak morze albo mała jak źródełko.',
+    'Woda pokrywa 70,9 procent powierzchni planety.',
+    'W atmosferze jest więcej wody niż we wszystkich naszych rzekach razem wziętych.',
+    'Meduza i ogórek to w 95% woda.',
+    'Woda jest najważniejszym zasobem na świecie.',
+    'Czasami gorąca woda może zamarznąć szybciej niż zimna woda, jest to tzw. efekt Mpemba',
+    'Woda składa się z dwóch pierwiastków: wodoru i tlenu. 2 wodory + 1 tlen = H2O.',
+    'NASA odkryła wodę w formie lodu na księżycu.',
+    'Woda jest drugą naczystszą cząsteczką we wszechświecie. Pierwszą jest wodór H2',
+  ];
+
+  String displayQuote = 'Count Your Water';
+
+  String getQuote() {
+    final _random = Random();
+    displayQuote = quotes[_random.nextInt(quotes.length)];
+    //displayQuote = quote;
+    return displayQuote;
   }
 
   @override
@@ -87,14 +91,10 @@ class _HydrationScreenState extends State<HydrationScreen> {
           axes: [
             RadialAxis(
               showLabels: false,
-
               showTicks: false,
               minimum: 0,
               maximum: 1800,
               interval: 250,
-
-              // startAngle: 180,
-              // endAngle: 0,
               radiusFactor: 0.8,
               axisLineStyle: const AxisLineStyle(
                 thickness: 0.1,
@@ -122,7 +122,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                         'Cel dnia',
                       ),
                       Text(
-                        '${progressValue.toInt()}/${WaterAmount(waterAmount)}',
+                        '${progressValue.toInt()}/${getWaterAmount(waterAmount)}',
                         style: Theme.of(context).textTheme.headline4,
                       ),
                       const SizedBox(height: 20),
@@ -152,13 +152,20 @@ class _HydrationScreenState extends State<HydrationScreen> {
           ],
         ),
         GestureDetector(
-          child: const SizedBox(
+          onTap: () => setState(() {
+            getQuote();
+          }),
+          child: SizedBox(
             width: 300,
             child: Card(
               elevation: 3,
               child: Padding(
-                padding: EdgeInsets.all(20.0),
-                child: Text('Bądź jak woda – przystosowuje się do każdego naczynia, a może zniszczyć skałę.'),
+                padding: const EdgeInsets.all(30.0),
+                child: Text(
+                  displayQuote,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(fontSize: 15, fontFamily: 'Cinzel'),
+                ),
               ),
             ),
           ),
