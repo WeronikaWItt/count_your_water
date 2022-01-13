@@ -26,7 +26,6 @@ class _HydrationScreenState extends State<HydrationScreen> {
       int sum = _counter + 250;
       result = sum.toString();
       progressValue += 250;
-      //_counter++;
     });
   }
 
@@ -43,7 +42,6 @@ class _HydrationScreenState extends State<HydrationScreen> {
       } else {
         progressValue -= 250;
       }
-      //_counter--;
     });
   }
 
@@ -95,7 +93,6 @@ class _HydrationScreenState extends State<HydrationScreen> {
                   cornerStyle: CornerStyle.bothCurve,
                   enableAnimation: true,
                   animationType: AnimationType.linear,
-                  //  animationDuration: 20,
                 )
               ],
               annotations: [
