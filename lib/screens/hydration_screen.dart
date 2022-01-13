@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
+import 'package:count_your_water/screens/profile_screen.dart';
+
 
 double progressValue = 0;
 
@@ -15,7 +17,7 @@ class Result extends ChangeNotifier {}
 class _HydrationScreenState extends State<HydrationScreen> {
   final int _counter = 0;
   String result = '0';
-  String waterAmount = '0';
+
 
   //late Timer _timer;
 
@@ -71,13 +73,36 @@ class _HydrationScreenState extends State<HydrationScreen> {
     setState(() {});
   }
 
+
+
   String WaterAmount(var water) {
+
     if (waterAmount == '0') {
       return '1800ml';
+
     } else {
       return waterAmount.toString() + 'ml';
     }
+
+
   }
+
+  
+
+
+  double max_number=1800 ;
+  double max(double number){
+    double num=double.parse(waterAmount);
+    if(num==0){
+      number=1800;
+    }
+    else {
+      number=double.parse(waterAmount);
+    }
+    return number;
+  }
+
+  //int waterAmountFinal=int.parse(waterAmount);
 
   @override
   Widget build(BuildContext context) {
@@ -90,7 +115,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
 
               showTicks: false,
               minimum: 0,
-              maximum: 1800,
+              maximum: max(max_number),
               interval: 250,
 
               // startAngle: 180,
@@ -167,3 +192,4 @@ class _HydrationScreenState extends State<HydrationScreen> {
     );
   }
 }
+

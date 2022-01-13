@@ -5,6 +5,7 @@ enum Gender {
   male,
   female,
 }
+String waterAmount ='0';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -18,15 +19,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
   TextEditingController weightController = TextEditingController();
   TextEditingController activityController = TextEditingController();
 
-  String waterAmount = '0';
-  void countWaterAmount(int weight, int hours) {
-    int res = 0;
+  String countWaterAmount(var w, var h) {
+    double res = 0;
+    var weight=double.parse('$w');
+    var hours=double.parse('$h');
     if (selectedGender == Gender.female) {
-      res += ((weight * 0.025) + (hours * 0.4)) as int;
+      res += ((weight * 0.025) + (hours * 0.4))*1000;
     } else if (selectedGender == Gender.male) {
-      res += ((weight * 0.03) + (hours * 0.5)) as int;
+      res += ((weight * 0.03) + (hours * 0.5))*1000;
     }
-    waterAmount = res.toString();
+    return res.toString();
   }
 
   @override
@@ -94,13 +96,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     TextButton(
                       onPressed: () {
                         Navigator.pop(context, 'Pozostaw jako domyślny');
+                        waterAmount='1800';
                       },
                       child: const Text('Pozostaw jako domyślny'),
                     ),
                     TextButton(
                       onPressed: () {
                         Navigator.pop(context, 'Oblicz ilość wody');
-                        countWaterAmount(55, 2);
+                        waterAmount=countWaterAmount(weightController.text, activityController.text);
                       },
                       child: const Text('Oblicz ilość wody'),
                     ),
@@ -119,3 +122,4 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 }
+
