@@ -87,7 +87,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
 
   }
 
-  
+
 
 
   double max_number=1800 ;
