@@ -1,0 +1,13 @@
+#Instrukcja korzystania z aplikacji Count Your Water
+
+1. Otwórz aplikację "Coun Your Water"
+2. Na ekranie głównym za pomocą przycisków dodaj lub odejmij wypitą ilość ml wody.
+  2.1 Kliknij na pole z tekstem u dołu ekranu, aby wylosować cytat lub ciekawostkę.
+3. Przejdź na ekran "Profil", klikając na nagłówek lub ruchem typu swipe w lewo.
+  3.1 Podaj dane dotyczące płci, wagi i aktywności fizycznej w wyznaczonych polach.
+  3.2 Zatwierdź informacje przyciskiem "Zapisz".
+  3.3 W oknie dialogowym wybierz ustawienia domyślne lub obliczone na podstawie podanych danych.
+4. Z ekanu głównego przejdź na ekran "Historia", klikając na nagłówek lub ruchem typu swipe w prawo.
+  4.1 Usuń historię, klikając ikonę śmietnika.
+5. Wyjdź z aplikacji za pomocą przycisków systemowych telefonu.
+6. Po otrzymaniu powiadomienia przypominającego (typu push notifications), kliknij w nie, aby przenieść się do aplikacji.
