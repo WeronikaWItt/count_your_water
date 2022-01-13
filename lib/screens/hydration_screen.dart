@@ -1,10 +1,8 @@
-
-
-import 'package:count_your_water/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 double progressValue = 0;
+
 class HydrationScreen extends StatefulWidget {
   const HydrationScreen({Key? key}) : super(key: key);
 
@@ -12,15 +10,12 @@ class HydrationScreen extends StatefulWidget {
   State<HydrationScreen> createState() => _HydrationScreenState();
 }
 
-class Result extends ChangeNotifier{
-
-}
+class Result extends ChangeNotifier {}
 
 class _HydrationScreenState extends State<HydrationScreen> {
   final int _counter = 0;
   String result = '0';
-
-
+  String waterAmount = '0';
 
   //late Timer _timer;
 
@@ -50,7 +45,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
     setState(() {
       int sum = _counter + 250;
       result = sum.toString();
-      progressValue+=250;
+      progressValue += 250;
       //_counter++;
     });
   }
@@ -63,11 +58,11 @@ class _HydrationScreenState extends State<HydrationScreen> {
         int sum = _counter - 250;
         result = sum.toString();
       }
-      if(progressValue==0){
-        progressValue=0;
+      if (progressValue == 0) {
+        progressValue = 0;
+      } else {
+        progressValue -= 250;
       }
-      else{
-      progressValue-=250;}
       //_counter--;
     });
   }
@@ -76,14 +71,12 @@ class _HydrationScreenState extends State<HydrationScreen> {
     setState(() {});
   }
 
-
-
-    String WaterAmount(var water){
-    if(waterAmount=='0'){
+  String WaterAmount(var water) {
+    if (waterAmount == '0') {
       return '1800ml';
+    } else {
+      return waterAmount.toString() + 'ml';
     }
-    else{return waterAmount.toString()+'ml';}
-
   }
 
   @override
@@ -93,14 +86,12 @@ class _HydrationScreenState extends State<HydrationScreen> {
         SfRadialGauge(
           axes: [
             RadialAxis(
-
               showLabels: false,
 
               showTicks: false,
               minimum: 0,
               maximum: 1800,
               interval: 250,
-
 
               // startAngle: 180,
               // endAngle: 0,
@@ -113,7 +104,6 @@ class _HydrationScreenState extends State<HydrationScreen> {
               ),
               pointers: <GaugePointer>[
                 RangePointer(
-
                   value: progressValue,
                   width: 0.1,
                   sizeUnit: GaugeSizeUnit.factor,
@@ -121,8 +111,6 @@ class _HydrationScreenState extends State<HydrationScreen> {
                   enableAnimation: true,
                   animationType: AnimationType.linear,
                   //  animationDuration: 20,
-
-
                 )
               ],
               annotations: [
@@ -133,9 +121,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                       const Text(
                         'Cel dnia',
                       ),
-
                       Text(
-
                         '${progressValue.toInt()}/${WaterAmount(waterAmount)}',
                         style: Theme.of(context).textTheme.headline4,
                       ),
@@ -145,10 +131,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                         children: [
                           FloatingActionButton(
                             elevation: 3,
-                            onPressed:
-                              _decrementCounter,
-
-
+                            onPressed: _decrementCounter,
                             child: const Icon(Icons.minimize_sharp),
                           ),
                           const SizedBox(
@@ -156,9 +139,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                           ),
                           FloatingActionButton(
                             elevation: 3,
-                            onPressed:
-                              _incrementCounter,
-
+                            onPressed: _incrementCounter,
                             child: const Icon(Icons.add),
                           ),
                         ],
