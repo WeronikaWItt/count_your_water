@@ -25,15 +25,15 @@ class InitScreen extends StatelessWidget {
             tabs: [
               Tab(
                 icon: Icon(Icons.history),
-                text: 'History',
+                text: 'Historia',
               ),
               Tab(
                 icon: Icon(Icons.water),
-                text: 'Hydration',
+                text: 'Cel dnia',
               ),
               Tab(
                 icon: Icon(Icons.account_circle_outlined),
-                text: 'Profile',
+                text: 'Profil',
               ),
             ],
           ),
