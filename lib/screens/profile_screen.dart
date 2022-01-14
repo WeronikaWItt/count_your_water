@@ -19,7 +19,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   TextEditingController activityController = TextEditingController();
 
   String waterAmount = '0';
-  void countWaterAmount(double weight, double hours) {
+  String countWaterAmount(double weight, double hours) {
     double res = 0;
     if (selectedGender == Gender.female) {
       res += ((weight * 0.025) + (hours * 0.4));
