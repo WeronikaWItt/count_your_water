@@ -3,8 +3,10 @@
     <!-- Flutter needs it to communicate with the running application
          to allow setting breakpoints, to provide hot reload, etc.
     -->
-    <application android:icon="@mipmap/launcher_icon"
-        android:usesCleartextTraffic="true">
+    <application >
+<!--        android:icon="@mipmap/launcher_icon"-->
+<!--        android:usesCleartextTraffic="true"-->
+<!--        >-->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
