@@ -5,7 +5,7 @@ enum Gender {
   male,
   female,
 }
-
+String waterAmount = '0';
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
 
@@ -18,7 +18,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   TextEditingController weightController = TextEditingController();
   TextEditingController activityController = TextEditingController();
 
-  String waterAmount = '0';
+
   String countWaterAmount(double weight, double hours) {
     double res = 0;
     if (selectedGender == Gender.female) {
