@@ -1,3 +1,4 @@
+import 'package:count_your_water/constants.dart';
 import 'package:count_your_water/widget/custom_input.dart';
 import 'package:flutter/material.dart';
 
@@ -19,12 +20,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
   TextEditingController activityController = TextEditingController();
 
   String waterAmount = '0';
-  void countWaterAmount(int weight, int hours) {
-    int res = 0;
+  void countWaterAmount(double weight, double hours) {
+    double res = 0;
     if (selectedGender == Gender.female) {
-      res += ((weight * 0.025) + (hours * 0.4)) as int;
+      res += ((weight * 0.025) + (hours * 0.4));
     } else if (selectedGender == Gender.male) {
-      res += ((weight * 0.03) + (hours * 0.5)) as int;
+      res += ((weight * 0.03) + (hours * 0.5));
     }
     waterAmount = res.toString();
   }
@@ -47,11 +48,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         selectedGender = Gender.female;
                       });
                     },
-                    textColor: selectedGender == Gender.female ? Colors.white : Colors.blue,
-                    color: selectedGender == Gender.female ? Colors.blue : Colors.white,
+                    textColor: selectedGender == Gender.female ? Colors.white : kBlue,
+                    color: selectedGender == Gender.female ? kBlue : Colors.white,
                     padding: const EdgeInsets.all(15),
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0), side: const BorderSide(color: Colors.blue)),
+                        borderRadius: BorderRadius.circular(50.0), side: const BorderSide(color: kBlue)),
                     child: const Text('Kobieta'),
                   ),
                 ),
@@ -63,11 +64,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         selectedGender = Gender.male;
                       });
                     },
-                    textColor: selectedGender == Gender.male ? Colors.white : Colors.blue,
-                    color: selectedGender == Gender.male ? Colors.blue : Colors.white,
+                    textColor: selectedGender == Gender.male ? Colors.white : kBlue,
+                    color: selectedGender == Gender.male ? kBlue : Colors.white,
                     padding: const EdgeInsets.all(15),
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0), side: const BorderSide(color: Colors.blue)),
+                        borderRadius: BorderRadius.circular(50.0), side: const BorderSide(color: kBlue)),
                     child: const Text('Mężczyzna'),
                   ),
                 ),
@@ -108,7 +109,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ),
               padding: const EdgeInsets.all(15),
-              color: Colors.blue,
+              color: kBlue,
               textColor: Colors.white,
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
               child: const Text('Zapisz'),
