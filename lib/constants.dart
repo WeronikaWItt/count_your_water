@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
-const kBlue = Color(0xff0288d1);
+const kLightBlue = Color(0xff0288d1);
+const kBlue = Color(0xff01579B);
 List<String> quotes = [
   'Bądź jak woda – przystosowuje się do każdego naczynia, a może zniszczyć skałę.',
   'Ludzie są jak morze, czasem łagodni i przyjaźni, czasem burzliwi i zdradliwi. Przede wszystkim to jednak tylko woda.',

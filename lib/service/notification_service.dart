@@ -5,6 +5,8 @@ class NotificationService {
   static final _notifications = FlutterLocalNotificationsPlugin();
   static final onNotifications = BehaviorSubject<String?>();
 
+  var scheduledTime = DateTime.now().add(const Duration(seconds: 5));
+
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
 
   static Future _notificationDetails() async {
@@ -28,7 +30,12 @@ class NotificationService {
     });
   }
 
-  static void showNotify({required String title, required String details, required String payload, int id = 0}) async {
+  static void showNotify({
+    required String title,
+    required String details,
+    required String payload,
+    int id = 0,
+  }) async {
     _notifications.show(
       id,
       title,
@@ -37,4 +44,25 @@ class NotificationService {
       payload: payload,
     );
   }
+
+  // static void showScheduledNotify({
+  //   required String title,
+  //   required String details,
+  //   required String payload,
+  //   required DateTime dateTime,
+  //   int id = 0,
+  // }) async {
+  //   _notifications.zonedSchedule(
+  //     id,
+  //     title,
+  //     details,
+  //     tz.TZDateTime.from(
+  //       dateTime,
+  //     ),
+  //     await _notificationDetails(),
+  //     payload: payload,
+  //     androidAllowWhileIdle: true,
+  //     uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
+  //   );
+  // }
 }

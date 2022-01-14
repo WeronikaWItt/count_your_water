@@ -2,8 +2,6 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
-import 'package:count_your_water/screens/profile_screen.dart';
-
 
 import '../constants.dart';
 
@@ -21,7 +19,7 @@ class Result extends ChangeNotifier {}
 class _HydrationScreenState extends State<HydrationScreen> {
   final int _counter = 0;
   String result = '0';
-
+  String waterAmount = '0';
 
   void _incrementCounter() {
     setState(() {
@@ -51,21 +49,23 @@ class _HydrationScreenState extends State<HydrationScreen> {
     setState(() {});
   }
 
+<<<<<<< HEAD
 //<<<<<<< HEAD
 
 
   String WaterAmount(var water) {
 
+=======
+  String getWaterAmount(var water) {
+>>>>>>> f84e3118161842de650f636d45247436a21c2d70
     if (waterAmount == '0') {
       return '1800ml';
-
     } else {
       return waterAmount.toString() + 'ml';
     }
-
-
   }
 
+<<<<<<< HEAD
 //<<<<<<< HEAD
 
 
@@ -78,13 +78,25 @@ class _HydrationScreenState extends State<HydrationScreen> {
     }
     else {
       number=double.parse(waterAmount);
+=======
+  double maxNumber = 1800;
+  double max(double number) {
+    double num = double.parse(waterAmount);
+    if (num == 0) {
+      number = 1800;
+    } else {
+      number = double.parse(waterAmount);
+>>>>>>> f84e3118161842de650f636d45247436a21c2d70
     }
     return number;
   }
 
   //int waterAmountFinal=int.parse(waterAmount);
 
+<<<<<<< HEAD
 //=======
+=======
+>>>>>>> f84e3118161842de650f636d45247436a21c2d70
   String displayQuote = 'Count Your Water';
 
   String getQuote() {
@@ -93,7 +105,10 @@ class _HydrationScreenState extends State<HydrationScreen> {
     return displayQuote;
   }
 
+<<<<<<< HEAD
 //>>>>>>> 4469d2967508cc8127e59dcd8f1661aceaf35c14
+=======
+>>>>>>> f84e3118161842de650f636d45247436a21c2d70
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -105,7 +120,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
               showLabels: false,
               showTicks: false,
               minimum: 0,
-              maximum: max(max_number),
+              maximum: max(maxNumber),
               interval: 250,
               radiusFactor: 0.8,
               axisLineStyle: const AxisLineStyle(
@@ -141,6 +156,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           FloatingActionButton(
+                            backgroundColor: kLightBlue,
                             elevation: 3,
                             onPressed: _decrementCounter,
                             child: const Icon(Icons.minimize_sharp),
@@ -149,6 +165,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                             width: 20,
                           ),
                           FloatingActionButton(
+                            backgroundColor: kLightBlue,
                             elevation: 3,
                             onPressed: _incrementCounter,
                             child: const Icon(Icons.add),
@@ -185,4 +202,3 @@ class _HydrationScreenState extends State<HydrationScreen> {
     );
   }
 }
-
