@@ -51,14 +51,11 @@ class _HydrationScreenState extends State<HydrationScreen> {
     setState(() {});
   }
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
 
   String WaterAmount(var water) {
 
-=======
-  String getWaterAmount(var water) {
->>>>>>> 4469d2967508cc8127e59dcd8f1661aceaf35c14
     if (waterAmount == '0') {
       return '1800ml';
 
@@ -69,7 +66,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
 
   }
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
 
 
@@ -87,7 +84,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
 
   //int waterAmountFinal=int.parse(waterAmount);
 
-=======
+//=======
   String displayQuote = 'Count Your Water';
 
   String getQuote() {
@@ -96,7 +93,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
     return displayQuote;
   }
 
->>>>>>> 4469d2967508cc8127e59dcd8f1661aceaf35c14
+//>>>>>>> 4469d2967508cc8127e59dcd8f1661aceaf35c14
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -136,7 +133,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                         'Cel dnia',
                       ),
                       Text(
-                        '${progressValue.toInt()}/${getWaterAmount(waterAmount)}',
+                        '${progressValue.toInt()}/${WaterAmount(waterAmount)}',
                         style: Theme.of(context).textTheme.headline4,
                       ),
                       const SizedBox(height: 20),
