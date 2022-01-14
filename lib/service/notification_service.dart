@@ -1,10 +1,11 @@
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:rxdart/rxdart.dart';
-import 'package:timezone/standalone.dart' as tz;
 
 class NotificationService {
   static final _notifications = FlutterLocalNotificationsPlugin();
   static final onNotifications = BehaviorSubject<String?>();
+
+  var scheduledTime = DateTime.now().add(const Duration(seconds: 5));
 
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
 
@@ -44,21 +45,24 @@ class NotificationService {
     );
   }
 
-  static void showScheduledNotify({
-    required String title,
-    required String details,
-    required String payload,
-    required DateTime dateTime,
-    int id = 0,
-  }) async =>
-      _notifications.zonedSchedule(
-        id,
-        title,
-        details,
-        tz.TZDateTime.from(dateTime, tz.getLocation('America/Detroit')),
-        await _notificationDetails(),
-        payload: payload,
-        androidAllowWhileIdle: true,
-        uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
-      );
+  // static void showScheduledNotify({
+  //   required String title,
+  //   required String details,
+  //   required String payload,
+  //   required DateTime dateTime,
+  //   int id = 0,
+  // }) async {
+  //   _notifications.zonedSchedule(
+  //     id,
+  //     title,
+  //     details,
+  //     tz.TZDateTime.from(
+  //       dateTime,
+  //     ),
+  //     await _notificationDetails(),
+  //     payload: payload,
+  //     androidAllowWhileIdle: true,
+  //     uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
+  //   );
+  // }
 }
