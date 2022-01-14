@@ -1,7 +1,11 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 import 'package:count_your_water/screens/profile_screen.dart';
 
+
+import '../constants.dart';
 
 double progressValue = 0;
 
@@ -19,36 +23,11 @@ class _HydrationScreenState extends State<HydrationScreen> {
   String result = '0';
 
 
-  //late Timer _timer;
-
-  /*@override
-  void initState() {
-    super.initState();
-    if (mounted) {
-      _timer = Timer.periodic(const Duration(seconds: 5), (Timer _timer) {
-        setState(() {
-          if (progressValue == 100) {
-            progressValue = 0;
-          } else {
-            progressValue++;
-          }
-        });
-      });
-    }
-  }
-
-  @override
-  void dispose() {
-    _timer.cancel();
-    super.dispose();
-  }*/
-
   void _incrementCounter() {
     setState(() {
       int sum = _counter + 250;
       result = sum.toString();
       progressValue += 250;
-      //_counter++;
     });
   }
 
@@ -65,7 +44,6 @@ class _HydrationScreenState extends State<HydrationScreen> {
       } else {
         progressValue -= 250;
       }
-      //_counter--;
     });
   }
 
@@ -73,10 +51,14 @@ class _HydrationScreenState extends State<HydrationScreen> {
     setState(() {});
   }
 
+<<<<<<< HEAD
 
 
   String WaterAmount(var water) {
 
+=======
+  String getWaterAmount(var water) {
+>>>>>>> 4469d2967508cc8127e59dcd8f1661aceaf35c14
     if (waterAmount == '0') {
       return '1800ml';
 
@@ -87,6 +69,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
 
   }
 
+<<<<<<< HEAD
 
 
 
@@ -104,22 +87,29 @@ class _HydrationScreenState extends State<HydrationScreen> {
 
   //int waterAmountFinal=int.parse(waterAmount);
 
+=======
+  String displayQuote = 'Count Your Water';
+
+  String getQuote() {
+    final _random = Random();
+    displayQuote = quotes[_random.nextInt(quotes.length)];
+    return displayQuote;
+  }
+
+>>>>>>> 4469d2967508cc8127e59dcd8f1661aceaf35c14
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         SfRadialGauge(
           axes: [
             RadialAxis(
               showLabels: false,
-
               showTicks: false,
               minimum: 0,
               maximum: max(max_number),
               interval: 250,
-
-              // startAngle: 180,
-              // endAngle: 0,
               radiusFactor: 0.8,
               axisLineStyle: const AxisLineStyle(
                 thickness: 0.1,
@@ -135,7 +125,6 @@ class _HydrationScreenState extends State<HydrationScreen> {
                   cornerStyle: CornerStyle.bothCurve,
                   enableAnimation: true,
                   animationType: AnimationType.linear,
-                  //  animationDuration: 20,
                 )
               ],
               annotations: [
@@ -147,7 +136,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                         'Cel dnia',
                       ),
                       Text(
-                        '${progressValue.toInt()}/${WaterAmount(waterAmount)}',
+                        '${progressValue.toInt()}/${getWaterAmount(waterAmount)}',
                         style: Theme.of(context).textTheme.headline4,
                       ),
                       const SizedBox(height: 20),
@@ -177,13 +166,20 @@ class _HydrationScreenState extends State<HydrationScreen> {
           ],
         ),
         GestureDetector(
-          child: const SizedBox(
+          onTap: () => setState(() {
+            getQuote();
+          }),
+          child: SizedBox(
             width: 300,
             child: Card(
               elevation: 3,
               child: Padding(
-                padding: EdgeInsets.all(20.0),
-                child: Text('Bądź jak woda – przystosowuje się do każdego naczynia, a może zniszczyć skałę.'),
+                padding: const EdgeInsets.all(30.0),
+                child: Text(
+                  displayQuote,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(fontSize: 15, fontFamily: 'Cinzel'),
+                ),
               ),
             ),
           ),
