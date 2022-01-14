@@ -20,11 +20,11 @@ class _InitScreenState extends State<InitScreen> {
     NotificationService.init(initScheduled: false);
     listenNotify();
 
-    NotificationService.showScheduledNotify(
-        title: 'Count Your Water',
-        details: 'Czas na szklankę',
-        payload: 'glass_of_water',
-        dateTime: DateTime.now().add(const Duration(seconds: 12)));
+    // NotificationService.showScheduledNotify(
+    //     title: 'Count Your Water',
+    //     details: 'Czas na szklankę',
+    //     payload: 'glass_of_water',
+    //     dateTime: DateTime.now().add(const Duration(seconds: 12)));
   }
 
   void listenNotify() => NotificationService.onNotifications.stream.listen(onClickedNotify);

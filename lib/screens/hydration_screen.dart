@@ -112,6 +112,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           FloatingActionButton(
+                            backgroundColor: kLightBlue,
                             elevation: 3,
                             onPressed: _decrementCounter,
                             child: const Icon(Icons.minimize_sharp),
@@ -120,6 +121,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                             width: 20,
                           ),
                           FloatingActionButton(
+                            backgroundColor: kLightBlue,
                             elevation: 3,
                             onPressed: _incrementCounter,
                             child: const Icon(Icons.add),
