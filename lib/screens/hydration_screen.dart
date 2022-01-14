@@ -2,8 +2,6 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
-import 'package:count_your_water/screens/profile_screen.dart';
-
 
 import '../constants.dart';
 
@@ -21,7 +19,7 @@ class Result extends ChangeNotifier {}
 class _HydrationScreenState extends State<HydrationScreen> {
   final int _counter = 0;
   String result = '0';
-
+  String waterAmount = '0';
 
   void _incrementCounter() {
     setState(() {
@@ -51,43 +49,27 @@ class _HydrationScreenState extends State<HydrationScreen> {
     setState(() {});
   }
 
-<<<<<<< HEAD
-
-
-  String WaterAmount(var water) {
-
-=======
   String getWaterAmount(var water) {
->>>>>>> 4469d2967508cc8127e59dcd8f1661aceaf35c14
     if (waterAmount == '0') {
       return '1800ml';
-
     } else {
       return waterAmount.toString() + 'ml';
     }
-
-
   }
 
-<<<<<<< HEAD
-
-
-
-  double max_number=1800 ;
-  double max(double number){
-    double num=double.parse(waterAmount);
-    if(num==0){
-      number=1800;
-    }
-    else {
-      number=double.parse(waterAmount);
+  double maxNumber = 1800;
+  double max(double number) {
+    double num = double.parse(waterAmount);
+    if (num == 0) {
+      number = 1800;
+    } else {
+      number = double.parse(waterAmount);
     }
     return number;
   }
 
   //int waterAmountFinal=int.parse(waterAmount);
 
-=======
   String displayQuote = 'Count Your Water';
 
   String getQuote() {
@@ -96,7 +78,6 @@ class _HydrationScreenState extends State<HydrationScreen> {
     return displayQuote;
   }
 
->>>>>>> 4469d2967508cc8127e59dcd8f1661aceaf35c14
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -108,7 +89,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
               showLabels: false,
               showTicks: false,
               minimum: 0,
-              maximum: max(max_number),
+              maximum: max(maxNumber),
               interval: 250,
               radiusFactor: 0.8,
               axisLineStyle: const AxisLineStyle(
@@ -190,4 +171,3 @@ class _HydrationScreenState extends State<HydrationScreen> {
     );
   }
 }
-
