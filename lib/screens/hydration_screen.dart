@@ -51,16 +51,23 @@ class _HydrationScreenState extends State<HydrationScreen> {
     setState(() {});
   }
 
+//<<<<<<< HEAD
 
 
   String WaterAmount(var water) {
 
     if (waterAmount == '0') {
       return '1800ml';
+
     } else {
       return waterAmount.toString() + 'ml';
     }
+
+
   }
+
+//<<<<<<< HEAD
+
 
 
   double max_number=1800 ;
@@ -77,6 +84,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
 
   //int waterAmountFinal=int.parse(waterAmount);
 
+//=======
   String displayQuote = 'Count Your Water';
 
   String getQuote() {
@@ -85,6 +93,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
     return displayQuote;
   }
 
+//>>>>>>> 4469d2967508cc8127e59dcd8f1661aceaf35c14
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -132,7 +141,6 @@ class _HydrationScreenState extends State<HydrationScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           FloatingActionButton(
-                            backgroundColor: kLightBlue,
                             elevation: 3,
                             onPressed: _decrementCounter,
                             child: const Icon(Icons.minimize_sharp),
@@ -141,7 +149,6 @@ class _HydrationScreenState extends State<HydrationScreen> {
                             width: 20,
                           ),
                           FloatingActionButton(
-                            backgroundColor: kLightBlue,
                             elevation: 3,
                             onPressed: _incrementCounter,
                             child: const Icon(Icons.add),
@@ -178,3 +185,4 @@ class _HydrationScreenState extends State<HydrationScreen> {
     );
   }
 }
+
