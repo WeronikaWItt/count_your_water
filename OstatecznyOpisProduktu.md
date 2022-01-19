@@ -4,6 +4,8 @@ Count Your Water to aplikacja dzięki kórej nie zapomnisz już o piciu wody. Po
 śledzenie postępu dzięki historii oraz obliczenie dziennego zapotrzebowania wody. Ponadto aplikacja spełnia wymagania kontrastowe,
 aby każdy użytkownik mógł korzystać z niej w wygodny sposób.
 
+#
+
 Główne cechy:
 - łatwy w użyciu interfejs
 - regularne przypomnienia o piciu wody
