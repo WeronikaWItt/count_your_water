@@ -63,9 +63,6 @@ class _HydrationScreenState extends State<HydrationScreen> {
   }
 
 
-
-
-
   double max_number=1800 ;
   double max(double number){
     double num=double.parse(waterAmount);
