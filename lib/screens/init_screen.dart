@@ -1,11 +1,12 @@
+import 'dart:async';
+
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:count_your_water/constants.dart';
+import 'package:count_your_water/screens/history_screen.dart';
 import 'package:count_your_water/screens/hydration_screen.dart';
 import 'package:count_your_water/screens/profile_screen.dart';
 import 'package:count_your_water/service/notification_service.dart';
 import 'package:flutter/material.dart';
-import 'dart:async';
-import 'package:count_your_water/screens/history_screen.dart';
 
 import 'history_screen.dart';
 
@@ -21,11 +22,13 @@ class InitScreen extends StatefulWidget {
 
 
 
+
 class _InitScreenState extends State<InitScreen> {
+
+
 
   @override
   void initState() {
-
     NotificationService.init(initScheduled: false);
     NotificationService.showClickScheduledNotify(
         title: '${Emojis.wheater_droplet} Czas napełnić szklankę i wypić wodę!',

@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:count_your_water/screens/init_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -31,10 +30,11 @@ String newDate = "10/1/2022";*/
 // This variable determines whether the timer runs or not
 
 
+
 /*String displayDate = 'Date';
 
-String getDate() {
 
+String getDate() {
   displayDate = items as String;
   return displayDate;
 }*/
@@ -48,7 +48,6 @@ void addItem() {
 
 class HistoryScreen extends StatelessWidget {
   const HistoryScreen({Key? key}) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -141,7 +140,5 @@ class HistoryScreen extends StatelessWidget {
         ],
       ),
     );*/
-
-
   }
 }
