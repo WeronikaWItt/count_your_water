@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'package:count_your_water/screens/init_screen.dart';
 import 'package:flutter/material.dart';
 
 DateTime date = DateTime.now();
@@ -28,28 +28,20 @@ String saveProgress(String savedDate) {
 }
 
 String newDate = "10/1/2022";
-
-List<String> _items = [];
-
 // This variable determines whether the timer runs or not
-bool isRunning = true;
+
+
+String displayDate = 'Date';
+
+String getDate() {
+
+  displayDate = items as String;
+  return displayDate;
+}
 
 class HistoryScreen extends StatelessWidget {
   const HistoryScreen({Key? key}) : super(key: key);
 
-  void _addItem() {
-    _items.add(saveProgress(dmy));
-  }
-
-  void initState() {
-    Timer.periodic(const Duration(minutes: 1), (Timer timer) {
-      if (!isRunning) {
-        timer.cancel();
-      }
-      _addItem();
-    });
-    initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +50,7 @@ class HistoryScreen extends StatelessWidget {
         padding: const EdgeInsets.only(top: 8.0),
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemCount: _items.length,
+          itemCount: items.length,
           itemBuilder: (_, index) {
             return Expanded(
               child: Card(
@@ -66,14 +58,21 @@ class HistoryScreen extends StatelessWidget {
                 color: Colors.amber,
                 elevation: 5,
                 child: ListTile(
-                  title: Text(_items[index]),
+                  title: Text(items[index]),
                 ),
               ),
             );
           },
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          isRunning = false;
+        },
+        child: Icon(Icons.stop_circle),
+      ),
     );
+
     /*
   @override
   Widget build(BuildContext context) {
@@ -139,5 +138,7 @@ class HistoryScreen extends StatelessWidget {
         ],
       ),
     );*/
+
+
   }
 }
