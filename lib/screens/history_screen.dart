@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:count_your_water/screens/init_screen.dart';
 import 'package:flutter/material.dart';
 
-DateTime date = DateTime.now();
+/*DateTime date = DateTime.now();
 
 String dmy = '${date.day}/${date.month}/${date.year}';
 String yesterday = '${date.day - 1}/${date.month}/${date.year}';
@@ -27,16 +27,23 @@ String saveProgress(String savedDate) {
   }
 }
 
-String newDate = "10/1/2022";
+String newDate = "10/1/2022";*/
 // This variable determines whether the timer runs or not
 
 
-String displayDate = 'Date';
+/*String displayDate = 'Date';
 
 String getDate() {
 
   displayDate = items as String;
   return displayDate;
+}*/
+
+void addItem() {
+  final DateTime now = DateTime.now();
+
+  items.add("${now.hour}:${now.minute}:${now.second}");
+
 }
 
 class HistoryScreen extends StatelessWidget {
@@ -46,31 +53,27 @@ class HistoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: Padding(
         padding: const EdgeInsets.only(top: 8.0),
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: items.length,
-          itemBuilder: (_, index) {
+          itemBuilder: (context, index) {
             return Expanded(
               child: Card(
                 margin: const EdgeInsets.all(10),
                 color: Colors.amber,
                 elevation: 5,
                 child: ListTile(
-                  title: Text(items[index]),
+                  title: Text(items[index].toString()),
                 ),
               ),
             );
           },
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          isRunning = false;
-        },
-        child: Icon(Icons.stop_circle),
-      ),
+
     );
 
     /*
