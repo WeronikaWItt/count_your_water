@@ -1,5 +1,6 @@
 import 'package:count_your_water/screens/hydration_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:count_your_water/data_cards.dart';
 
 DateTime date = DateTime.now();
 
@@ -27,6 +28,32 @@ String saveProgress(String savedDate) {
 }
 
 String newDate = "10/1/2022";
+
+String displayDate = 'Count Your Water';
+String displayWater = 'Count Your Water';
+
+String getDate() {
+
+  displayDate = data[0];
+  return displayDate;
+}
+
+String getWater() {
+
+  displayWater = water[0];
+  return displayWater;
+}
+String _commonAmount=getWaterAmount(waterAmount);
+String checkData(){
+
+  if(displayWater=='Nie pileś jeszce wody'){
+    _commonAmount='';
+  }
+  else{
+    _commonAmount;
+  }
+  return _commonAmount;
+}
 
 class HistoryScreen extends StatelessWidget {
   const HistoryScreen({Key? key}) : super(key: key);
@@ -72,6 +99,19 @@ class HistoryScreen extends StatelessWidget {
                 children: <Widget>[
                   Text(saveProgress(dmy)),
                   Text('$progressValue/${getWaterAmount(waterAmount)}'),
+                ],
+              ),
+            ),
+          ),
+          Card(
+            elevation: 2,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text(getDate()),
+                  Text('${getWater()}/${checkData()}'),
                 ],
               ),
             ),
