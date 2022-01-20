@@ -1,6 +1,7 @@
 import 'package:count_your_water/screens/hydration_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:count_your_water/data_cards.dart';
+
+import 'dart:async';
 
 DateTime date = DateTime.now();
 
@@ -29,51 +30,80 @@ String saveProgress(String savedDate) {
 
 String newDate = "10/1/2022";
 
-String displayDate = 'Count Your Water';
-String displayWater = 'Count Your Water';
 
-String getDate() {
 
-  displayDate = data[0];
-  return displayDate;
-}
+List<String> _items = [];
 
-String getWater() {
-
-  displayWater = water[0];
-  return displayWater;
-}
-String _commonAmount=getWaterAmount(waterAmount);
-String checkData(){
-
-  if(displayWater=='Nie pileś jeszce wody'){
-    _commonAmount='';
-  }
-  else{
-    _commonAmount;
-  }
-  return _commonAmount;
-}
+// This variable determines whether the timer runs or not
+bool isRunning = true;
 
 class HistoryScreen extends StatelessWidget {
   const HistoryScreen({Key? key}) : super(key: key);
 
+  void _addItem() {
+    _items.add(saveProgress(dmy));
+
+  }
+
+  @override
+  void initState() {
+    Timer.periodic(const Duration(minutes: 1), (Timer timer) {
+      if (!isRunning) {
+        timer.cancel();
+      }
+      _addItem();
+    });
+    initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+        padding: const EdgeInsets.only(top: 8.0),
+    child: Expanded(
+      child: Column(
+          children: [
+      ListView.builder(
+        scrollDirection: Axis.horizontal,
+      itemCount: _items.length,
+        itemBuilder: (_, index) {
+          return Card(
+            margin: EdgeInsets.all(10),
+            color: Colors.amber,
+            elevation: 5,
+            child: ListTile(
+
+              title: Text(_items[index]),
+            ),
+          );
+        },),
+          ],
+      ),
+    ),
+
+
+
+    );
+   /*
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 8.0),
       child: Column(
         children: [
-          Card(
-            elevation: 2,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(newDate),
-                  Text('$progressValue/${getWaterAmount(waterAmount)}'),
-                ],
+          ListView(
+             prototypeItem:
+             Card(
+              elevation: 2,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(newDate),
+                    Text('$progressValue/${getWaterAmount(waterAmount)}'),
+                  ],
+                ),
               ),
             ),
           ),
@@ -110,14 +140,14 @@ class HistoryScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text(getDate()),
-                  Text('${getWater()}/${checkData()}'),
+                  Text(''),
+
                 ],
               ),
             ),
           ),
         ],
       ),
-    );
+    );*/
   }
 }

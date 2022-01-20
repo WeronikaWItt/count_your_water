@@ -6,6 +6,7 @@ enum Gender {
   female,
 }
 String waterAmount ='0';
+bool isRunning = true;
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);

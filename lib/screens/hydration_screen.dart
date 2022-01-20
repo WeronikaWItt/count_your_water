@@ -8,6 +8,7 @@ import 'package:count_your_water/screens/profile_screen.dart';
 import '../constants.dart';
 
 double progressValue = 0;
+int index=0;
 
 class HydrationScreen extends StatefulWidget {
   const HydrationScreen({Key? key}) : super(key: key);
@@ -29,6 +30,10 @@ class _HydrationScreenState extends State<HydrationScreen> {
       result = sum.toString();
       progressValue += 250;
     });
+    setState(() {
+      isRunning = false;
+    });
+    index++;
   }
 
   void _decrementCounter() {
@@ -45,6 +50,10 @@ class _HydrationScreenState extends State<HydrationScreen> {
         progressValue -= 250;
       }
     });
+    setState(() {
+      isRunning = false;
+    });
+    index++;
   }
 
   void changeProgress() {
@@ -150,7 +159,8 @@ class _HydrationScreenState extends State<HydrationScreen> {
                           ),
                           FloatingActionButton(
                             elevation: 3,
-                            onPressed: _incrementCounter,
+                            onPressed:
+                              _incrementCounter,
                             child: const Icon(Icons.add),
                           ),
                         ],
