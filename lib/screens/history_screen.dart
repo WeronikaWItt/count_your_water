@@ -1,7 +1,6 @@
-import 'package:count_your_water/screens/hydration_screen.dart';
-import 'package:flutter/material.dart';
-
 import 'dart:async';
+
+import 'package:flutter/material.dart';
 
 DateTime date = DateTime.now();
 
@@ -30,8 +29,6 @@ String saveProgress(String savedDate) {
 
 String newDate = "10/1/2022";
 
-
-
 List<String> _items = [];
 
 // This variable determines whether the timer runs or not
@@ -42,10 +39,8 @@ class HistoryScreen extends StatelessWidget {
 
   void _addItem() {
     _items.add(saveProgress(dmy));
-
   }
 
-  @override
   void initState() {
     Timer.periodic(const Duration(minutes: 1), (Timer timer) {
       if (!isRunning) {
@@ -58,33 +53,28 @@ class HistoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Scaffold(
+      body: Padding(
         padding: const EdgeInsets.only(top: 8.0),
-    child: Expanded(
-      child: Column(
-          children: [
-      ListView.builder(
-        scrollDirection: Axis.horizontal,
-      itemCount: _items.length,
-        itemBuilder: (_, index) {
-          return Card(
-            margin: EdgeInsets.all(10),
-            color: Colors.amber,
-            elevation: 5,
-            child: ListTile(
-
-              title: Text(_items[index]),
-            ),
-          );
-        },),
-          ],
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: _items.length,
+          itemBuilder: (_, index) {
+            return Expanded(
+              child: Card(
+                margin: const EdgeInsets.all(10),
+                color: Colors.amber,
+                elevation: 5,
+                child: ListTile(
+                  title: Text(_items[index]),
+                ),
+              ),
+            );
+          },
+        ),
       ),
-    ),
-
-
-
     );
-   /*
+    /*
   @override
   Widget build(BuildContext context) {
     return Padding(
