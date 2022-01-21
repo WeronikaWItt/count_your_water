@@ -181,7 +181,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                 child: Text(
                   displayQuote,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(fontSize: 15, fontFamily: 'Cinzel'),
+                  style: const TextStyle(fontSize: 18, fontFamily: 'Cinzel', fontWeight: FontWeight.bold),
                 ),
               ),
             ),
