@@ -137,6 +137,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                       const SizedBox(height: 40),
                       const Text(
                         'Cel dnia',
+                        style: TextStyle(fontSize: 18),
                       ),
                       Text(
                         ' ${progressValue.toInt()}/${WaterAmount(waterAmount)}',
@@ -146,6 +147,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
+                          const SizedBox(width: 15),
                           FloatingActionButton(
                             elevation: 3,
                             onPressed: _decrementCounter,
