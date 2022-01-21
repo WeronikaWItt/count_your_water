@@ -134,11 +134,12 @@ class _HydrationScreenState extends State<HydrationScreen> {
                   widget: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
+                      const SizedBox(height: 40),
                       const Text(
                         'Cel dnia',
                       ),
                       Text(
-                        '${progressValue.toInt()}/${WaterAmount(waterAmount)}',
+                        ' ${progressValue.toInt()}/${WaterAmount(waterAmount)}',
                         style: Theme.of(context).textTheme.headline4,
                       ),
                       const SizedBox(height: 20),
