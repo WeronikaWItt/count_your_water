@@ -148,7 +148,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                           FloatingActionButton(
                             elevation: 3,
                             onPressed: _decrementCounter,
-                            child: const Icon(Icons.minimize_sharp),
+                            child: const Icon(Icons.remove),
                           ),
                           const SizedBox(
                             width: 20,
