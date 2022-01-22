@@ -176,7 +176,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
             getQuote();
           }),
           child: SizedBox(
-            width: 300,
+            width: 330,
             child: Card(
               elevation: 3,
               child: Padding(
