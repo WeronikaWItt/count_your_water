@@ -137,7 +137,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                       const SizedBox(height: 100),
                       const Text(
                         'Cel dnia',
-                        style: TextStyle(fontSize: 18),
+                        style: TextStyle(fontSize: 20, color: Colors.black54),
                       ),
                       Text(
                         ' ${progressValue.toInt()}/${WaterAmount(waterAmount)}',
@@ -194,13 +194,14 @@ class _HydrationScreenState extends State<HydrationScreen> {
           child: SizedBox(
             width: 350,
             child: Card(
-              elevation: 3,
+              elevation: 0,
+              color: Color.fromARGB(30, 0, 169, 181),
               child: Padding(
                 padding: const EdgeInsets.all(25.0),
                 child: Text(
                   displayQuote,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(fontSize: 18, fontFamily: 'Cinzel', fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontSize: 18, fontFamily: 'Cinzel', fontWeight: FontWeight.bold, color: Colors.black54),
                 ),
               ),
             ),
