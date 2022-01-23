@@ -134,21 +134,24 @@ class _HydrationScreenState extends State<HydrationScreen> {
                   widget: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
+                      const SizedBox(height: 40),
                       const Text(
                         'Cel dnia',
+                        style: TextStyle(fontSize: 18),
                       ),
                       Text(
-                        '${progressValue.toInt()}/${WaterAmount(waterAmount)}',
+                        ' ${progressValue.toInt()}/${WaterAmount(waterAmount)}',
                         style: Theme.of(context).textTheme.headline4,
                       ),
                       const SizedBox(height: 20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
+                          const SizedBox(width: 15),
                           FloatingActionButton(
                             elevation: 3,
                             onPressed: _decrementCounter,
-                            child: const Icon(Icons.minimize_sharp),
+                            child: const Icon(Icons.remove),
                           ),
                           const SizedBox(
                             width: 20,
@@ -173,7 +176,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
             getQuote();
           }),
           child: SizedBox(
-            width: 300,
+            width: 330,
             child: Card(
               elevation: 3,
               child: Padding(
@@ -181,7 +184,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                 child: Text(
                   displayQuote,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(fontSize: 15, fontFamily: 'Cinzel'),
+                  style: const TextStyle(fontSize: 18, fontFamily: 'Cinzel', fontWeight: FontWeight.bold),
                 ),
               ),
             ),

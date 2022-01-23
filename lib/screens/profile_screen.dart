@@ -6,7 +6,7 @@ enum Gender {
   female,
 }
 String waterAmount ='0';
-
+bool isRunning = true;
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -40,7 +40,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text('Płeć'),
+            const SizedBox(height: 35),
+            const Text(
+              'Płeć',
+              style: TextStyle(fontSize: 18)
+            ),
+            const SizedBox(height: 8),
             Row(
               children: [
                 Expanded(
@@ -55,10 +60,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     padding: const EdgeInsets.all(15),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50.0), side: const BorderSide(color: Colors.blue)),
-                    child: const Text('Kobieta'),
+                    child: const Text(' Kobieta ', style: TextStyle(fontSize: 18)),
                   ),
                 ),
-                const SizedBox(width: 30),
+                const SizedBox(width: 15),
                 Expanded(
                   child: MaterialButton(
                     onPressed: () {
@@ -71,20 +76,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     padding: const EdgeInsets.all(15),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50.0), side: const BorderSide(color: Colors.blue)),
-                    child: const Text('Mężczyzna'),
+                    child: const Text('Mężczyzna', style: TextStyle(fontSize: 18)),
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
             const Text('Waga (kg)'),
-            const SizedBox(height: 5),
-            CustomInput(controller: weightController),
             const SizedBox(height: 10),
+            CustomInput(controller: weightController),
+            const SizedBox(height: 20),
             const Text('Aktywność fizyczna (godziny/dzień)'),
-            const SizedBox(height: 5),
+            const SizedBox(height: 10),
             CustomInput(controller: activityController),
-            const SizedBox(height: 200),
+            const SizedBox(height: 210),
             MaterialButton(
               onPressed: () => showDialog<String>(
                 context: context,
@@ -92,21 +97,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   title: const Text('Uwaga'),
                   content: const Text('Czy chcesz pozostawić domyślne spożycie wody (1800 ml) '
                       'czy chcesz, aby aplikacja obliczała '
-                      'spożycie wody na podstawie twojej wagi i aktywności fizycznej?'),
+                      'spożycie wody na podstawie twojej wagi i aktywności fizycznej?', style: TextStyle(fontSize: 18)),
                   actions: <Widget>[
                     TextButton(
                       onPressed: () {
-                        Navigator.pop(context, 'Pozostaw jako domyślny');
+                        Navigator.pop(context);
                         waterAmount='1800';
                       },
-                      child: const Text('Pozostaw jako domyślny'),
+                      child: const Text('Pozostaw jako domyślny', style: TextStyle(fontSize: 18)),
                     ),
                     TextButton(
                       onPressed: () {
-                        Navigator.pop(context, 'Oblicz ilość wody');
+                        Navigator.pop(context);
                         waterAmount=countWaterAmount(weightController.text, activityController.text);
                       },
-                      child: const Text('Oblicz ilość wody'),
+                      child: const Text('Oblicz ilość wody', style: TextStyle(fontSize: 18)),
                     ),
                   ],
                 ),
@@ -115,7 +120,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               color: Colors.blue,
               textColor: Colors.white,
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
-              child: const Text('Zapisz'),
+              child: const Text('Zapisz', style: TextStyle(fontSize: 20)),
             )
           ],
         ),

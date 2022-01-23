@@ -20,13 +20,12 @@ class InitScreen extends StatefulWidget {
   State<InitScreen> createState() => _InitScreenState();
 }
 
+
+
+
 class _InitScreenState extends State<InitScreen> {
-  void _addItem() {
-    final DateTime now = DateTime.now();
-    setState(() {
-      items.add("${now.hour}:${now.minute}:${now.second}");
-    });
-  }
+
+
 
   @override
   void initState() {
@@ -40,7 +39,7 @@ class _InitScreenState extends State<InitScreen> {
       if (!isRunning) {
         timer.cancel();
       }
-      _addItem();
+      addItem();
     });
     super.initState();
   }
