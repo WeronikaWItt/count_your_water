@@ -141,7 +141,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                       ),
                       Text(
                         ' ${progressValue.toInt()}/${WaterAmount(waterAmount)}',
-                        style: Theme.of(context).textTheme.headline4,
+                        style: TextStyle(fontSize: 34, color: Colors.grey[700], fontWeight: FontWeight.w600),
                       ),
                       const SizedBox(height: 20),
                       Row(
@@ -151,7 +151,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                           FloatingActionButton(
                             elevation: 0,
                             onPressed: _decrementCounter,
-                            child: const Icon(Icons.remove, color: Colors.blueAccent, size: 50),
+                            child: const Icon(Icons.remove, color: Colors.blue, size: 50),
                             backgroundColor: Colors.white10,
                           ),
                           const SizedBox(width: 3),
@@ -171,7 +171,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                             elevation: 3,
                             onPressed:
                               _incrementCounter,
-                            child: const Icon(Icons.add, color: Colors.blueAccent, size: 50),
+                            child: const Icon(Icons.add, color: Colors.blue, size: 50),
                             backgroundColor: Colors.white10,
                           ),
                         ],
@@ -192,21 +192,30 @@ class _HydrationScreenState extends State<HydrationScreen> {
             getQuote();
           }),
           child: SizedBox(
-            width: 350,
+            width: 360,
+            height: 130,
             child: Card(
               elevation: 0,
               color: Color.fromARGB(30, 0, 169, 181),
-              child: Padding(
-                padding: const EdgeInsets.all(25.0),
-                child: Text(
-                  displayQuote,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(fontSize: 18, fontFamily: 'Cinzel', fontWeight: FontWeight.bold, color: Colors.black54),
-                ),
-              ),
+              //child: Padding(
+                //padding: const EdgeInsets.all(25.0),
+                child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Positioned(
+                          left: 20,
+                          right: 20,
+                          child: Text(
+                            displayQuote,
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(fontSize: 18, fontFamily: 'Cinzel', fontWeight: FontWeight.bold, color: Colors.black54),
+                          ),
+                       ),
+                    ],
+                  ),
             ),
           ),
-        )
+        ),
       ],
     );
   }
