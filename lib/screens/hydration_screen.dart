@@ -112,7 +112,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
               minimum: 0,
               maximum: max(max_number),
               interval: 250,
-              radiusFactor: 0.8,
+              radiusFactor: 1,
               axisLineStyle: const AxisLineStyle(
                 thickness: 0.1,
                 color: Color.fromARGB(30, 0, 169, 181),
@@ -134,7 +134,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                   widget: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      const SizedBox(height: 40),
+                      const SizedBox(height: 100),
                       const Text(
                         'Cel dnia',
                         style: TextStyle(fontSize: 18),
@@ -147,12 +147,23 @@ class _HydrationScreenState extends State<HydrationScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const SizedBox(width: 15),
+                          //const SizedBox(width: 15),
                           FloatingActionButton(
-                            elevation: 3,
+                            elevation: 0,
                             onPressed: _decrementCounter,
-                            child: const Icon(Icons.remove),
+                            child: const Icon(Icons.remove, color: Colors.blueAccent, size: 50),
+                            backgroundColor: Colors.white10,
                           ),
+                          const SizedBox(width: 3),
+                          const SizedBox(
+                            width: 85,
+                            height: 120,
+                            child: Image(
+                              image: AssetImage('images/icon.png'),
+                              //width: 300,
+                            ),
+                          ),
+                          const SizedBox(width: 3),
                           const SizedBox(
                             width: 20,
                           ),
@@ -160,10 +171,15 @@ class _HydrationScreenState extends State<HydrationScreen> {
                             elevation: 3,
                             onPressed:
                               _incrementCounter,
-                            child: const Icon(Icons.add),
+                            child: const Icon(Icons.add, color: Colors.blueAccent, size: 50),
+                            backgroundColor: Colors.white10,
                           ),
                         ],
                       )
+                      const Text(
+                        '250ml',
+                        style: TextStyle(fontSize: 24, color: Colors.black54),
+                      ),
                     ],
                   ),
                 ),
@@ -176,11 +192,11 @@ class _HydrationScreenState extends State<HydrationScreen> {
             getQuote();
           }),
           child: SizedBox(
-            width: 330,
+            width: 350,
             child: Card(
               elevation: 3,
               child: Padding(
-                padding: const EdgeInsets.all(30.0),
+                padding: const EdgeInsets.all(25.0),
                 child: Text(
                   displayQuote,
                   textAlign: TextAlign.center,
