@@ -117,7 +117,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                 thickness: 0.1,
                 color: Color.fromARGB(30, 0, 169, 181),
                 thicknessUnit: GaugeSizeUnit.factor,
-                cornerStyle: CornerStyle.startCurve,
+                cornerStyle: CornerStyle.bothCurve,
               ),
               pointers: <GaugePointer>[
                 RangePointer(
