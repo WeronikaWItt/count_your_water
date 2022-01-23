@@ -79,6 +79,7 @@ flutter:
 
   assets:
     - images/splash_logo.png
+    - images/icon.png
 
   fonts:
     - family: Pacifico
