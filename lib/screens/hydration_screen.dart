@@ -1,22 +1,21 @@
 import 'dart:math';
 
+import 'package:count_your_water/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
-import 'package:count_your_water/screens/profile_screen.dart';
-
 
 import '../constants.dart';
+import 'history_screen.dart';
 
 double progressValue = 0;
 
-double max_number=1800 ;
-double max(double number){
-double num=double.parse(waterAmount);
-  if(num==0){
-    number=1800;
-  }
-  else {
-    number=double.parse(waterAmount);
+double max_number = 1800;
+double max(double number) {
+  double num = double.parse(waterAmount);
+  if (num == 0) {
+    number = 1800;
+  } else {
+    number = double.parse(waterAmount);
   }
   return number;
 }
@@ -25,7 +24,7 @@ String WaterAmount(var water) {
   if (waterAmount == '0') {
     return '1800ml';
   } else {
-      return waterAmount.toString() + 'ml';
+    return waterAmount.toString() + 'ml';
   }
 }
 
@@ -41,7 +40,6 @@ class Result extends ChangeNotifier {}
 class _HydrationScreenState extends State<HydrationScreen> {
   final int _counter = 0;
   String result = '0';
-
 
   void _incrementCounter() {
     setState(() {
@@ -73,14 +71,6 @@ class _HydrationScreenState extends State<HydrationScreen> {
     setState(() {});
   }
 
-//<<<<<<< HEAD
-
-
-//<<<<<<< HEAD
-
-  //int waterAmountFinal=int.parse(waterAmount);
-
-//=======
   String displayQuote = 'Count Your Water';
 
   String getQuote() {
@@ -89,7 +79,6 @@ class _HydrationScreenState extends State<HydrationScreen> {
     return displayQuote;
   }
 
-//>>>>>>> 4469d2967508cc8127e59dcd8f1661aceaf35c14
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -159,14 +148,13 @@ class _HydrationScreenState extends State<HydrationScreen> {
                             width: 20,
                           ),
                           FloatingActionButton(
-                            elevation: 3,
-                            onPressed:
-                              _incrementCounter,
+                            elevation: 0,
+                            onPressed: _incrementCounter,
                             child: const Icon(Icons.add, color: Colors.blue, size: 50),
                             backgroundColor: Colors.white10,
                           ),
                         ],
-                      )
+                      ),
                       const Text(
                         '250ml',
                         style: TextStyle(fontSize: 24, color: Colors.black54),
@@ -187,23 +175,24 @@ class _HydrationScreenState extends State<HydrationScreen> {
             height: 130,
             child: Card(
               elevation: 0,
-              color: Color.fromARGB(30, 0, 169, 181),
+              color: const Color.fromARGB(30, 0, 169, 181),
               //child: Padding(
-                //padding: const EdgeInsets.all(25.0),
-                child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        Positioned(
-                          left: 20,
-                          right: 20,
-                          child: Text(
-                            displayQuote,
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(fontSize: 18, fontFamily: 'Cinzel', fontWeight: FontWeight.bold, color: Colors.black54),
-                          ),
-                       ),
-                    ],
+              //padding: const EdgeInsets.all(25.0),
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  Positioned(
+                    left: 20,
+                    right: 20,
+                    child: Text(
+                      displayQuote,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                          fontSize: 18, fontFamily: 'Cinzel', fontWeight: FontWeight.bold, color: Colors.black54),
+                    ),
                   ),
+                ],
+              ),
             ),
           ),
         ),
@@ -211,4 +200,3 @@ class _HydrationScreenState extends State<HydrationScreen> {
     );
   }
 }
-

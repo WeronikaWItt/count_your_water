@@ -1,11 +1,13 @@
 import 'package:count_your_water/widget/custom_input.dart';
 import 'package:flutter/material.dart';
 
+import 'history_screen.dart';
+
 enum Gender {
   male,
   female,
 }
-String waterAmount ='0';
+String waterAmount = '0';
 bool isRunning = true;
 
 class ProfileScreen extends StatefulWidget {
@@ -22,12 +24,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   String countWaterAmount(var w, var h) {
     double res = 0;
-    var weight=double.parse('$w');
-    var hours=double.parse('$h');
+    var weight = double.parse('$w');
+    var hours = double.parse('$h');
     if (selectedGender == Gender.female) {
-      res += ((weight * 0.025) + (hours * 0.4))*1000;
+      res += ((weight * 0.025) + (hours * 0.4)) * 1000;
     } else if (selectedGender == Gender.male) {
-      res += ((weight * 0.03) + (hours * 0.5))*1000;
+      res += ((weight * 0.03) + (hours * 0.5)) * 1000;
     }
     return res.toString();
   }
@@ -41,10 +43,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             //const SizedBox(height: 35),
-            const Text(
-              'Płeć',
-              style: TextStyle(fontSize: 18, color: Colors.grey[800])
-            ),
+            Text('Płeć', style: TextStyle(fontSize: 18, color: Colors.grey[800])),
             const SizedBox(height: 8),
             Row(
               children: [
@@ -82,11 +81,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ],
             ),
             const SizedBox(height: 20),
-            const Text('Waga (kg)', style: TextStyle(fontSize: 18, color: Colors.grey[800])),
+            Text('Waga (kg)', style: TextStyle(fontSize: 18, color: Colors.grey[800])),
             const SizedBox(height: 10),
             CustomInput(controller: weightController),
             const SizedBox(height: 20),
-            const Text('Aktywność fizyczna (godziny/dzień)', style: TextStyle(fontSize: 18, color: Colors.grey[800])),
+            Text('Aktywność fizyczna (godziny/dzień)', style: TextStyle(fontSize: 18, color: Colors.grey[800])),
             const SizedBox(height: 10),
             CustomInput(controller: activityController),
             const SizedBox(height: 210),
@@ -94,22 +93,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
               onPressed: () => showDialog<String>(
                 context: context,
                 builder: (BuildContext context) => AlertDialog(
-                  title: const Text('Uwaga', style: TextStyle(fontSize: 20, color: Colors.grey[800])),
-                  content: const Text('Czy chcesz pozostawić domyślne spożycie wody (1800 ml) '
+                  title: Text('Uwaga', style: TextStyle(fontSize: 20, color: Colors.grey[800])),
+                  content: Text(
+                      'Czy chcesz pozostawić domyślne spożycie wody (1800 ml) '
                       'czy chcesz, aby aplikacja obliczała '
-                      'spożycie wody na podstawie twojej wagi i aktywności fizycznej?', style: TextStyle(fontSize: 18, color: Colors.grey[600])),
+                      'spożycie wody na podstawie twojej wagi i aktywności fizycznej?',
+                      style: TextStyle(fontSize: 18, color: Colors.grey[600])),
                   actions: <Widget>[
                     TextButton(
                       onPressed: () {
                         Navigator.pop(context);
-                        waterAmount='1800';
+                        waterAmount = '1800';
                       },
                       child: const Text('Pozostaw jako domyślny', style: TextStyle(fontSize: 18)),
                     ),
                     TextButton(
                       onPressed: () {
                         Navigator.pop(context);
-                        waterAmount=countWaterAmount(weightController.text, activityController.text);
+                        waterAmount = countWaterAmount(weightController.text, activityController.text);
                         renewItem();
                       },
                       child: const Text('Oblicz ilość wody', style: TextStyle(fontSize: 18)),

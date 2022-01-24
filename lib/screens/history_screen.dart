@@ -1,4 +1,3 @@
-import 'package:count_your_water/screens/init_screen.dart';
 import 'package:count_your_water/screens/hydration_screen.dart';
 import 'package:count_your_water/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
@@ -50,8 +49,8 @@ int count = 0;
 
 void addItem() {
   final DateTime now = DateTime.now();
-  date_items.insert(0,"${now.day}/${now.month}/${now.year}");
-  water_items.insert(0,"${progressValue.toInt()}/${WaterAmount(waterAmount)}");
+  date_items.insert(0, "${now.day}/${now.month}/${now.year}");
+  water_items.insert(0, "${progressValue.toInt()}/${WaterAmount(waterAmount)}");
 }
 
 void renewItem() {
@@ -71,15 +70,13 @@ class HistoryScreen extends StatelessWidget {
             width: 360,
             height: 75,
             child: Card(
-              margin: EdgeInsets.only(left: 10, right: 10, top: 20)
+              margin: const EdgeInsets.only(left: 10, right: 10, top: 20),
               color: Colors.blue,
               elevation: 0,
               child: ListTile(
                 //reverse: true,
-                title: Text(
-                    '${date_items[count]}                               ${water_items[count]}',
-                    style: TextStyle(color: Colors.white, fontSize: 18)
-                ),
+                title: Text('${date_items[count]}                               ${water_items[count]}',
+                    style: const TextStyle(color: Colors.white, fontSize: 18)),
               ),
             ),
           );
@@ -89,7 +86,7 @@ class HistoryScreen extends StatelessWidget {
   }
 }
 
-    /*
+/*
   @override
   Widget build(BuildContext context) {
     return Padding(
