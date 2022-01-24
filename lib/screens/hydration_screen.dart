@@ -9,6 +9,25 @@ import '../constants.dart';
 
 double progressValue = 0;
 
+double max_number=1800 ;
+double max(double number){
+double num=double.parse(waterAmount);
+  if(num==0){
+    number=1800;
+  }
+  else {
+    number=double.parse(waterAmount);
+  }
+  return number;
+}
+
+String WaterAmount(var water) {
+  if (waterAmount == '0') {
+    return '1800ml';
+  } else {
+      return waterAmount.toString() + 'ml';
+  }
+}
 
 class HydrationScreen extends StatefulWidget {
   const HydrationScreen({Key? key}) : super(key: key);
@@ -30,8 +49,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
       result = sum.toString();
       progressValue += 250;
     });
-
-
+    renewItem();
   }
 
   void _decrementCounter() {
@@ -48,8 +66,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
         progressValue -= 250;
       }
     });
-
-
+    renewItem();
   }
 
   void changeProgress() {
@@ -59,33 +76,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
 //<<<<<<< HEAD
 
 
-  String WaterAmount(var water) {
-
-    if (waterAmount == '0') {
-      return '1800ml';
-
-    } else {
-      return waterAmount.toString() + 'ml';
-    }
-
-
-  }
-
 //<<<<<<< HEAD
-
-
-
-  double max_number=1800 ;
-  double max(double number){
-    double num=double.parse(waterAmount);
-    if(num==0){
-      number=1800;
-    }
-    else {
-      number=double.parse(waterAmount);
-    }
-    return number;
-  }
 
   //int waterAmountFinal=int.parse(waterAmount);
 
