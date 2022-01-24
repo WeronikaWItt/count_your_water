@@ -35,15 +35,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 8.0, left: 10, right: 10),
+      padding: const EdgeInsets.only(top: 40, left: 10, right: 10),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const SizedBox(height: 35),
+            //const SizedBox(height: 35),
             const Text(
               'Płeć',
-              style: TextStyle(fontSize: 18)
+              style: TextStyle(fontSize: 18, color: Colors.grey[800])
             ),
             const SizedBox(height: 8),
             Row(
@@ -63,7 +63,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: const Text(' Kobieta ', style: TextStyle(fontSize: 18)),
                   ),
                 ),
-                const SizedBox(width: 15),
+                const SizedBox(width: 10),
                 Expanded(
                   child: MaterialButton(
                     onPressed: () {
@@ -82,11 +82,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ],
             ),
             const SizedBox(height: 20),
-            const Text('Waga (kg)'),
+            const Text('Waga (kg)', style: TextStyle(fontSize: 18, color: Colors.grey[800])),
             const SizedBox(height: 10),
             CustomInput(controller: weightController),
             const SizedBox(height: 20),
-            const Text('Aktywność fizyczna (godziny/dzień)'),
+            const Text('Aktywność fizyczna (godziny/dzień)', style: TextStyle(fontSize: 18, color: Colors.grey[800])),
             const SizedBox(height: 10),
             CustomInput(controller: activityController),
             const SizedBox(height: 210),
@@ -94,10 +94,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
               onPressed: () => showDialog<String>(
                 context: context,
                 builder: (BuildContext context) => AlertDialog(
-                  title: const Text('Uwaga'),
+                  title: const Text('Uwaga', style: TextStyle(fontSize: 20, color: Colors.grey[800])),
                   content: const Text('Czy chcesz pozostawić domyślne spożycie wody (1800 ml) '
                       'czy chcesz, aby aplikacja obliczała '
-                      'spożycie wody na podstawie twojej wagi i aktywności fizycznej?', style: TextStyle(fontSize: 18)),
+                      'spożycie wody na podstawie twojej wagi i aktywności fizycznej?', style: TextStyle(fontSize: 18, color: Colors.grey[600])),
                   actions: <Widget>[
                     TextButton(
                       onPressed: () {
@@ -110,6 +110,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       onPressed: () {
                         Navigator.pop(context);
                         waterAmount=countWaterAmount(weightController.text, activityController.text);
+                        renewItem();
                       },
                       child: const Text('Oblicz ilość wody', style: TextStyle(fontSize: 18)),
                     ),
