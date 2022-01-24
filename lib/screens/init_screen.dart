@@ -10,8 +10,19 @@ import 'package:flutter/material.dart';
 
 import 'history_screen.dart';
 
-List<String> items = [];
-bool isRunning = true;
+//List<String> items = [];
+//bool isRunning = true;
+const TimeOfDay renewTime = TimeOfDay(hour: 6, minute: 00);
+
+void checkTime() {
+  Timer.periodic(const Duration(seconds: 60), (Timer timer) {
+    if (TimeOfDay.now() == renewTime) {
+      count++;
+      progressValue = 0;
+      addItem();
+    }
+  });
+}
 
 class InitScreen extends StatefulWidget {
   const InitScreen({Key? key}) : super(key: key);
@@ -20,12 +31,7 @@ class InitScreen extends StatefulWidget {
   State<InitScreen> createState() => _InitScreenState();
 }
 
-
-
-
 class _InitScreenState extends State<InitScreen> {
-
-
 
   @override
   void initState() {
@@ -41,6 +47,7 @@ class _InitScreenState extends State<InitScreen> {
       }
       addItem();
     });
+    checkTime();
     super.initState();
   }
 
