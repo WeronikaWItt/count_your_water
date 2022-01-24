@@ -134,7 +134,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                             child: const Icon(Icons.remove, color: Colors.blue, size: 50),
                             backgroundColor: Colors.white10,
                           ),
-                          const SizedBox(width: 3),
+                          const SizedBox(width: 14),
                           const SizedBox(
                             width: 85,
                             height: 120,
@@ -143,7 +143,6 @@ class _HydrationScreenState extends State<HydrationScreen> {
                               //width: 300,
                             ),
                           ),
-                          const SizedBox(width: 3),
                           const SizedBox(
                             width: 20,
                           ),
