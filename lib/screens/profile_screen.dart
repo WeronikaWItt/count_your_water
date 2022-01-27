@@ -37,7 +37,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 40, left: 10, right: 10),
+      padding: const EdgeInsets.only(top: 20, left: 10, right: 10, bottom: 10),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -72,7 +72,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     },
                     textColor: selectedGender == Gender.male ? Colors.white : Colors.blue,
                     color: selectedGender == Gender.male ? Colors.blue : Colors.white,
-                    padding: const EdgeInsets.all(15),
+                    padding: const EdgeInsets.all( 15),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50.0), side: const BorderSide(color: Colors.blue)),
                     child: const Text('Mężczyzna', style: TextStyle(fontSize: 18)),
@@ -90,6 +90,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             CustomInput(controller: activityController),
             const SizedBox(height: 210),
             MaterialButton(
+
               onPressed: () => showDialog<String>(
                 context: context,
                 builder: (BuildContext context) => AlertDialog(
@@ -118,11 +119,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ],
                 ),
               ),
-              padding: const EdgeInsets.all(15),
+              padding:  const EdgeInsets.all(15),
               color: Colors.blue,
               textColor: Colors.white,
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
               child: const Text('Zapisz', style: TextStyle(fontSize: 20)),
+
             )
           ],
         ),

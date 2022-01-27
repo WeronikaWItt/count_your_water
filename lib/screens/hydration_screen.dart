@@ -114,7 +114,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                   widget: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      const SizedBox(height: 100),
+                      const SizedBox(height: 100, width: double.infinity,),
                       const Text(
                         'Cel dnia',
                         style: TextStyle(fontSize: 20, color: Colors.black54),
@@ -156,7 +156,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                       ),
                       const Text(
                         '250ml',
-                        style: TextStyle(fontSize: 24, color: Colors.black54),
+                        style: TextStyle(fontSize: 20, color: Colors.black54),
                       ),
                     ],
                   ),
