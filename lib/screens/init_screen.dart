@@ -21,6 +21,9 @@ void checkTime() {
       progressValue = 0;
       addItem();
     }
+    else{
+      timer.cancel();
+    }
   });
 }
 
