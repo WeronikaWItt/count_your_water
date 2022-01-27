@@ -115,7 +115,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       const SizedBox(
-                        height: 100,
+                        height: 80,
                         width: double.infinity,
                       ),
                       const Text(
@@ -190,7 +190,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
                       displayQuote,
                       textAlign: TextAlign.center,
                       style: const TextStyle(
-                          fontSize: 18, fontFamily: 'Cinzel', fontWeight: FontWeight.bold, color: Colors.black54),
+                          fontSize: 16, fontFamily: 'Cinzel', fontWeight: FontWeight.bold, color: Colors.black54),
                     ),
                   ),
                 ],

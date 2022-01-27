@@ -1,4 +1,3 @@
-import 'package:count_your_water/screens/hydration_screen.dart';
 import 'package:count_your_water/widget/custom_input.dart';
 import 'package:flutter/material.dart';
 
@@ -110,6 +109,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     TextButton(
                       onPressed: () {
+                        // Navigator.of(context).push(
+                        //   MaterialPageRoute(builder: (context) => HydrationScreen()),
+                        // );
                         Navigator.pop(context);
                         waterAmount = countWaterAmount(weightController.text, activityController.text);
                         renewItem();
