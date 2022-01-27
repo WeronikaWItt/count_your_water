@@ -50,11 +50,11 @@ int count = 0;
 void addItem() {
   final DateTime now = DateTime.now();
   date_items.insert(0, "${now.day}/${now.month}/${now.year}");
-  water_items.insert(0, "${progressValue.toInt()}/${WaterAmount(waterAmount)}");
+  water_items.insert(0, "${progressValue.toInt()}/${getWaterAmount(waterAmount)}");
 }
 
 void renewItem() {
-  water_items[0] = "${progressValue.toInt()}/${WaterAmount(waterAmount)}";
+  water_items[0] = "${progressValue.toInt()}/${getWaterAmount(waterAmount)}";
 }
 
 class HistoryScreen extends StatelessWidget {

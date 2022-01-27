@@ -9,7 +9,7 @@ import 'history_screen.dart';
 
 double progressValue = 0;
 
-double max_number = 1800;
+double maxNumber = 1800;
 double max(double number) {
   double num = double.parse(waterAmount);
   if (num == 0) {
@@ -20,7 +20,7 @@ double max(double number) {
   return number;
 }
 
-String WaterAmount(var water) {
+String getWaterAmount(var water) {
   if (waterAmount == '0') {
     return '1800ml';
   } else {
@@ -90,7 +90,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
               showLabels: false,
               showTicks: false,
               minimum: 0,
-              maximum: max(max_number),
+              maximum: max(maxNumber),
               interval: 250,
               radiusFactor: 1,
               axisLineStyle: const AxisLineStyle(
@@ -114,13 +114,16 @@ class _HydrationScreenState extends State<HydrationScreen> {
                   widget: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      const SizedBox(height: 100, width: double.infinity,),
+                      const SizedBox(
+                        height: 100,
+                        width: double.infinity,
+                      ),
                       const Text(
                         'Cel dnia',
                         style: TextStyle(fontSize: 20, color: Colors.black54),
                       ),
                       Text(
-                        ' ${progressValue.toInt()}/${WaterAmount(waterAmount)}',
+                        ' ${progressValue.toInt()}/${getWaterAmount(waterAmount)}',
                         style: TextStyle(fontSize: 34, color: Colors.grey[700], fontWeight: FontWeight.w600),
                       ),
                       const SizedBox(height: 20),
