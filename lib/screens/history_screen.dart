@@ -67,16 +67,16 @@ class HistoryScreen extends StatelessWidget {
         itemCount: date_items.length,
         itemBuilder: (_, count) {
           return SizedBox(
-            width: 360,
-            height: 75,
+            width: 400,
+            height: 80,
             child: Card(
               margin: const EdgeInsets.only(left: 10, right: 10, top: 20),
-              color: Colors.blue,
-              elevation: 0,
+              color: Colors.white,
+              elevation: 2,
               child: ListTile(
                 //reverse: true,
-                title: Text('${date_items[count]}                               ${water_items[count]}',
-                    style: const TextStyle(color: Colors.white, fontSize: 18)),
+                title: Text('${date_items[count]}                                 ${water_items[count]}',
+                    style: const TextStyle(color: Colors.black54, fontSize: 18)),
               ),
             ),
           );
