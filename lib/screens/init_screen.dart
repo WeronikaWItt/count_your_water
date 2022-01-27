@@ -15,15 +15,13 @@ import 'history_screen.dart';
 const TimeOfDay renewTime = TimeOfDay(hour: 6, minute: 00);
 
 void checkTime() {
-  Timer.periodic(const Duration(seconds: 60), (Timer timer) {
+  Timer.periodic(const Duration(seconds: 2), (Timer timer) {
     if (TimeOfDay.now() == renewTime) {
       count++;
       progressValue = 0;
       addItem();
     }
-    else{
-      timer.cancel();
-    }
+
   });
 }
 
@@ -34,6 +32,7 @@ class InitScreen extends StatefulWidget {
   State<InitScreen> createState() => _InitScreenState();
 }
 
+DateTime current=DateTime.now();
 class _InitScreenState extends State<InitScreen> {
 
   @override
@@ -44,11 +43,15 @@ class _InitScreenState extends State<InitScreen> {
         payload: 'drink_water',
         dateTime: DateTime.now().add(const Duration(seconds: 12)));
 
-    Timer.periodic(const Duration(minutes: 1), (Timer timer) {
+    Timer.periodic(const Duration(seconds: 1), (Timer timer) {
       if (!isRunning) {
         timer.cancel();
       }
-      addItem();
+      if(date_items.isEmpty){
+      addItem();}
+      else if(date_items.contains(current)){
+        renewItem();
+      }
     });
     checkTime();
     super.initState();

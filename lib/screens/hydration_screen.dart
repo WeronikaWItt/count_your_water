@@ -71,7 +71,7 @@ class _HydrationScreenState extends State<HydrationScreen> {
     setState(() {});
   }
 
-  String displayQuote = 'Count Your Water';
+  String displayQuote = 'Woda jest wielkim darem i skarbem. Z niej wyszliśmy i dzięki niej istniejemy';
 
   String getQuote() {
     final _random = Random();

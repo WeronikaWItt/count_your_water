@@ -2,7 +2,10 @@ import 'package:flutter/cupertino.dart';
 
 const kLightBlue = Color(0xff0288d1);
 const kBlue = Color(0xff01579B);
+
 List<String> quotes = [
+  'Co by nie mówić – kosmos wybrał wodę jako podstawę życia.'
+  'Heksagonalna struktura wody jest Twoim kluczem do lepszego zdrowia.',
   'Bądź jak woda – przystosowuje się do każdego naczynia, a może zniszczyć skałę.',
   //'Ludzie są jak morze, czasem łagodni i przyjaźni, czasem burzliwi i zdradliwi. Przede wszystkim to jednak tylko woda.',
   //'Żyjemy niczym woda spływająca z góry, podążając mniej więcej w tym samym kierunku, póki jakaś przeszkoda nie zmusi nas do poszukania nowego koryta.',
