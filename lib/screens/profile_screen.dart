@@ -110,7 +110,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     TextButton(
                       onPressed: () {
                         // Navigator.of(context).push(
-                        //   MaterialPageRoute(builder: (context) => HydrationScreen()),
+                        //   MaterialPageRoute(builder: (context) => const HydrationScreen()),
                         // );
                         Navigator.pop(context);
                         waterAmount = countWaterAmount(weightController.text, activityController.text);

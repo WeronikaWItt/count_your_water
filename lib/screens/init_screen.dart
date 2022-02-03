@@ -21,7 +21,6 @@ void checkTime() {
       progressValue = 0;
       addItem();
     }
-
   });
 }
 
@@ -32,9 +31,9 @@ class InitScreen extends StatefulWidget {
   State<InitScreen> createState() => _InitScreenState();
 }
 
-DateTime current=DateTime.now();
-class _InitScreenState extends State<InitScreen> {
+DateTime current = DateTime.now();
 
+class _InitScreenState extends State<InitScreen> {
   @override
   void initState() {
     NotificationService.init(initScheduled: false);
@@ -47,9 +46,9 @@ class _InitScreenState extends State<InitScreen> {
       if (!isRunning) {
         timer.cancel();
       }
-      if(date_items.isEmpty){
-      addItem();}
-      else if(date_items.contains(current)){
+      if (date_items.isEmpty) {
+        addItem();
+      } else if (date_items.contains(current)) {
         renewItem();
       }
     });
